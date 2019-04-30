@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:color/color.dart';
 import 'package:quran/pages/ayalistbysura.dart';
 
 class SuraList extends StatefulWidget {
@@ -10,6 +9,8 @@ class SuraList extends StatefulWidget {
 }
 
 class SuraListState extends State<SuraList> {
+  final suraBgc = const Color(0xFFbadc57);
+
   TabController controller;
 
   @override
@@ -24,21 +25,9 @@ class SuraListState extends State<SuraList> {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(30.0),
           child: AppBar(
-            backgroundColor: Colors.teal,
-            iconTheme: IconThemeData(color: Colors.black),
-            title: TabBar(
-                indicator: UnderlineTabIndicator(
-                  insets: EdgeInsets.symmetric(horizontal: 5),
-                ),
-                onTap: (val) {},
-                controller: controller,
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.white,
-                tabs: <Widget>[
-                  Tab(
-                    icon: Icon(Icons.home),
-                  )
-                ]),
+            backgroundColor: Color(0xFF009484),
+            iconTheme: IconThemeData(color: Colors.white),
+            title:  Text(""),
           )),
       body: TabBarView(
         controller: controller,
@@ -55,15 +44,19 @@ class SuraItem extends StatefulWidget {
 }
 
 class SuraItemState extends State<SuraItem> {
-
+  var suraBgc = const Color(0xFF2ecc72);
   List QranListData = [];
   List AllSuraList = [];
+
+  String imgUrl;
+
   loadQranListData() async {
     var jsonString = await rootBundle.loadString("assets/sura_list.json");
     setState(() {
       this.QranListData = json.decode(jsonString);
     });
   }
+
   loadAllSuraListData() async {
     var jsonString = await rootBundle.loadString("assets/quran_bengali.json");
     setState(() {
@@ -79,18 +72,31 @@ class SuraItemState extends State<SuraItem> {
     loadAllSuraListData();
   }
 
+  String _setImage(String imgtext) {
+    if (imgtext == "Meccan") {
+      this.imgUrl = "assets/images/makka.png";
+    } else {
+      this.imgUrl = "assets/images/madina.png";
+    }
+    return this.imgUrl;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ListView.builder(
-            itemCount: QranListData.length,
-            itemBuilder: (BuildContext context, int i) => Container(
+        child: Container(
+          color: Color(0xFF2C3335),
+          child: ListView.builder(
+              itemCount: QranListData.length,
+              itemBuilder: (BuildContext context, int i) => Container(
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                   child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
+                      setState(() {
+                        // suraEach = Colors.teal;
+                      });
                       print("Card Tapped");
                       Navigator.push(
                         context,
@@ -98,15 +104,15 @@ class SuraItemState extends State<SuraItem> {
                       );
                     },
                     child: Card(
-                      color :  Colors.green,
-                      elevation: 1.0,
+                      color: suraBgc,
+                      elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(0),
                       ),
                       child: Container(
-                        width: MediaQuery.of(context).size.width,
+
                         padding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                        EdgeInsets.symmetric(horizontal: 5, vertical: 15),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,22 +120,40 @@ class SuraItemState extends State<SuraItem> {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Icon(Icons.home, size: 18, color:  Colors.white,),
-                                SizedBox(width: 5,),
-                                Text("${QranListData[i]["number"]}"),
-                                SizedBox(width: 5,),
-                                Text(QranListData[i]["bangla_name"]+" ( ${QranListData[i]['total_verses_b']} )", style: TextStyle(fontSize: 15,),),
+                                Image.asset(
+                                  _setImage(QranListData[i]["revelation_type"]),
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                SizedBox(
+                                  width: 3,
+                                ),
+                                Text("${QranListData[i]["number"]}",
+                                    style: TextStyle(fontSize: 17, )),
+                                SizedBox(
+                                  width: 3,
+                                ),
+                                Text(
+                                  QranListData[i]["bangla_name"] +
+                                      ""
+                                          "(${QranListData[i]['total_verses_b']})",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                  ),
+                                ),
                               ],
                             ),
                             Container(),
-                            Text(QranListData[i]["name"], style: TextStyle(fontSize: 15,)),
+                            Text(QranListData[i]["name"],
+                                style: TextStyle(
+                                  fontSize: 17,fontWeight: FontWeight.bold
+                                )),
                           ],
                         ),
                       ),
                     ),
-                  )
-
-                )),
+                  ))),
+        ),
       ),
     );
   }

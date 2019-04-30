@@ -1,16 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quran/pages/ayalistbysura.dart';
 import 'package:quran/pages/suralist.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'My App', home: SuraList()));
+
+  runApp(MaterialApp(title: 'My App', home: BanglaQuran()));
 }
 
 class BanglaQuran extends StatefulWidget {
+
   BanglaQuranState createState() => BanglaQuranState();
 }
 
 class BanglaQuranState extends State<BanglaQuran> {
+
   @override
   void initState() {
     super.initState();
@@ -18,6 +22,7 @@ class BanglaQuranState extends State<BanglaQuran> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.cyan,
       appBar: PreferredSize(
@@ -44,55 +49,63 @@ class BanglaQuranState extends State<BanglaQuran> {
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Card(
-                borderOnForeground: true,
-                color: Colors.teal,
-                child: InkWell(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SuraList()),
-                    );
-                  },
-                  child: Stack(
-                    children: <Widget>[
-                      Image.asset("assets/images/quran.png"),
-                    ],
+      body: Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("assets/images/bgImg.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Card(
+                  borderOnForeground: true,
+                  color: Colors.teal,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SuraList()),
+                      );
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset("assets/images/quran.png"),
+                      ],
+                    ),
                   ),
-                ),
-                elevation: 15,
-                margin: EdgeInsets.all(5),
-              ),Card(
-                borderOnForeground: true,
-                color: Colors.teal,
-                child: InkWell(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SuraList()),
-                    );
-                  },
-                  child: Stack(
-                    children: <Widget>[
-                      Image.asset("assets/images/hadith.png"),
-                    ],
+                  elevation: 15,
+                  margin: EdgeInsets.all(5),
+                ),Card(
+                  borderOnForeground: true,
+                  color: Colors.teal,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SuraList()),
+                      );
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset("assets/images/hadith.png"),
+                      ],
+                    ),
                   ),
+                  elevation: 15,
+                  margin: EdgeInsets.all(5),
                 ),
-                elevation: 15,
-                margin: EdgeInsets.all(5),
-              ),
-            ],
-          )
-        ],
-      ),
+              ],
+            )
+          ],
+        ),
+      )
     );
   }
 }

@@ -44,6 +44,9 @@ flutter:
   assets:
     - assets/images/quran.png
     - assets/images/hadith.png
+    - assets/images/makka.png
+    - assets/images/madina.png
+    - assets/images/bgImg.png
     - assets/sura_list.json
     - assets/quran_arabic.json
     - assets/quran_english.json

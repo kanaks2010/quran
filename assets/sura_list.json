@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "number": "০০১",
+    "number": "০১",
     "bangla_name": "আল ফাতিহা",
     "name": "سورة الفاتحة",
     "transliteration_en": "Al-Faatiha",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "number": "০০২",
+    "number": "০২",
     "bangla_name": "আল বাকারা",
     "name": "سورة البقرة",
     "transliteration_en": "Al-Baqara",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "number": "০০৩",
+    "number": "০৩",
     "bangla_name": "আল ইমরান",
     "name": "سورة آل عمران",
     "transliteration_en": "Aal-i-Imraan",
@@ -34,7 +34,7 @@
   },
   {
     "id": 4,
-    "number": "০০৪",
+    "number": "০৪",
     "bangla_name": "আন নিসা",
     "name": "سورة النساء",
     "transliteration_en": "An-Nisaa",
@@ -45,7 +45,7 @@
   },
   {
     "id": 5,
-    "number": "০০৫",
+    "number": "০৫",
     "bangla_name": "আল মায়িদাহ",
     "name": "سورة المائدة",
     "transliteration_en": "Al-Maaida",
@@ -56,7 +56,7 @@
   },
   {
     "id": 6,
-    "number": "০০৬",
+    "number": "০৬",
     "bangla_name": "আল আনআম",
     "name": "سورة الأنعام",
     "transliteration_en": "Al-An'aam",
@@ -67,7 +67,7 @@
   },
   {
     "id": 7,
-    "number": "০০৭",
+    "number": "০৭",
     "bangla_name": "আল আ'রাফ",
     "name": "سورة الأعراف",
     "transliteration_en": "Al-A'raaf",
@@ -78,7 +78,7 @@
   },
   {
     "id": 8,
-    "number": "০০৮",
+    "number": "০৮",
     "bangla_name": "আল-আনফাল",
     "name": "سورة الأنفال",
     "transliteration_en": "Al-Anfaal",
@@ -89,7 +89,7 @@
   },
   {
     "id": 9,
-    "number": "০০৯",
+    "number": "০৯",
     "bangla_name": "আত তাওবাহ",
     "name": "سورة التوبة",
     "transliteration_en": "At-Tawba",
@@ -100,7 +100,7 @@
   },
   {
     "id": 10,
-    "number": "০১০",
+    "number": "১০",
     "bangla_name": "ইউনুস",
     "name": "سورة يونس",
     "transliteration_en": "Yunus",
@@ -111,7 +111,7 @@
   },
   {
     "id": 11,
-    "number": "০১১",
+    "number": "১১",
     "bangla_name": "হুদ",
     "name": "سورة هود",
     "transliteration_en": "Hud",
@@ -122,7 +122,7 @@
   },
   {
     "id": 12,
-    "number": "০১২",
+    "number": "১২",
     "bangla_name": "ইউসূফ",
     "name": "سورة يوسف",
     "transliteration_en": "Yusuf",
@@ -133,7 +133,7 @@
   },
   {
     "id": 13,
-    "number": "০১৩",
+    "number": "১৩",
     "bangla_name": "রা'দ",
     "name": "سورة الرعد",
     "transliteration_en": "Ar-Ra'd",
@@ -144,7 +144,7 @@
   },
   {
     "id": 14,
-    "number": "০১৪",
+    "number": "১৪",
     "bangla_name": "ইব্রাহীম",
     "name": "سورة ابراهيم",
     "transliteration_en": "Ibrahim",
@@ -155,7 +155,7 @@
   },
   {
     "id": 15,
-    "number": "০১৫",
+    "number": "১৫",
     "bangla_name": "হিজর",
     "name": "سورة الحجر",
     "transliteration_en": "Al-Hijr",
@@ -166,7 +166,7 @@
   },
   {
     "id": 16,
-    "number": "০১৬",
+    "number": "১৬",
     "bangla_name": "নাহল",
     "name": "سورة النحل",
     "transliteration_en": "An-Nahl",
@@ -177,7 +177,7 @@
   },
   {
     "id": 17,
-    "number": "০১৭",
+    "number": "১৭",
     "bangla_name": "বনী ইসরাঈল",
     "name": "سورة الإسراء",
     "transliteration_en": "Al-Israa",
@@ -188,7 +188,7 @@
   },
   {
     "id": 18,
-    "number": "০১৮",
+    "number": "১৮",
     "bangla_name": "কাহফ",
     "name": "سورة الكهف",
     "transliteration_en": "Al-Kahf",
@@ -199,7 +199,7 @@
   },
   {
     "id": 19,
-    "number": "০১৯",
+    "number": "১৯",
     "bangla_name": "মারইয়াম",
     "name": "سورة مريم",
     "transliteration_en": "Maryam",
@@ -210,7 +210,7 @@
   },
   {
     "id": 20,
-    "number": "০২০",
+    "number": "২০",
     "bangla_name": "ত্বোয়া-হা",
     "name": "سورة طه",
     "transliteration_en": "Taa-Haa",
@@ -221,7 +221,7 @@
   },
   {
     "id": 21,
-    "number": "০২১",
+    "number": "২১",
     "bangla_name": "আম্বিয়া",
     "name": "سورة الأنبياء",
     "transliteration_en": "Al-Anbiyaa",
@@ -232,7 +232,7 @@
   },
   {
     "id": 22,
-    "number": "০২২",
+    "number": "২২",
     "bangla_name": "হাজ্জ্ব",
     "name": "سورة الحج",
     "transliteration_en": "Al-Hajj",
@@ -243,7 +243,7 @@
   },
   {
     "id": 23,
-    "number": "০২৩",
+    "number": "২৩",
     "bangla_name": "আল মু'মিনূন",
     "name": "سورة المؤمنون",
     "transliteration_en": "Al-Muminoon",
@@ -254,7 +254,7 @@
   },
   {
     "id": 24,
-    "number": "০২৪",
+    "number": "২৪",
     "bangla_name": "আন-নূর",
     "name": "سورة النور",
     "transliteration_en": "An-Noor",
@@ -265,7 +265,7 @@
   },
   {
     "id": 25,
-    "number": "০২৫",
+    "number": "২৫",
     "bangla_name": "আল-ফুরকান",
     "name": "سورة الفرقان",
     "transliteration_en": "Al-Furqaan",
@@ -276,7 +276,7 @@
   },
   {
     "id": 26,
-    "number": "০২৬",
+    "number": "২৬",
     "bangla_name": "আশ-শো'আরা",
     "name": "سورة الشعراء",
     "transliteration_en": "Ash-Shu'araa",
@@ -287,7 +287,7 @@
   },
   {
     "id": 27,
-    "number": "০২৭",
+    "number": "২৭",
     "bangla_name": "নমল",
     "name": "سورة النمل",
     "transliteration_en": "An-Naml",
@@ -298,7 +298,7 @@
   },
   {
     "id": 28,
-    "number": "০২৮",
+    "number": "২৮",
     "bangla_name": "আল কাসাস",
     "name": "سورة القصص",
     "transliteration_en": "Al-Qasas",
@@ -309,7 +309,7 @@
   },
   {
     "id": 29,
-    "number": "০২৯",
+    "number": "২৯",
     "bangla_name": "আল আনকাবুত",
     "name": "سورة العنكبوت",
     "transliteration_en": "Al-Ankaboot",
@@ -320,7 +320,7 @@
   },
   {
     "id": 30,
-    "number": "০৩০",
+    "number": "৩০",
     "bangla_name": "আর-রূম",
     "name": "سورة الروم",
     "transliteration_en": "Ar-Room",
@@ -331,7 +331,7 @@
   },
   {
     "id": 31,
-    "number": "০৩১",
+    "number": "৩১",
     "bangla_name": "লোকমান",
     "name": "سورة لقمان",
     "transliteration_en": "Luqman",
@@ -342,7 +342,7 @@
   },
   {
     "id": 32,
-    "number": "০৩২",
+    "number": "৩২",
     "bangla_name": "সেজদাহ",
     "name": "سورة السجدة",
     "transliteration_en": "As-Sajda",
@@ -353,7 +353,7 @@
   },
   {
     "id": 33,
-    "number": "০৩৩",
+    "number": "৩৩",
     "bangla_name": "আল আহযাব",
     "name": "سورة الأحزاب",
     "transliteration_en": "Al-Ahzaab",
@@ -364,7 +364,7 @@
   },
   {
     "id": 34,
-    "number": "০৩৪",
+    "number": "৩৪",
     "bangla_name": "সাবা",
     "name": "سورة سبإ",
     "transliteration_en": "Saba",
@@ -375,7 +375,7 @@
   },
   {
     "id": 35,
-    "number": "০৩৫",
+    "number": "৩৫",
     "bangla_name": "ফাতির",
     "name": "سورة فاطر",
     "transliteration_en": "Faatir",
@@ -386,7 +386,7 @@
   },
   {
     "id": 36,
-    "number": "০৩৬",
+    "number": "৩৬",
     "bangla_name": "ইয়াসীন",
     "name": "سورة يس",
     "transliteration_en": "Yaseen",
@@ -397,7 +397,7 @@
   },
   {
     "id": 37,
-    "number": "০৩৭",
+    "number": "৩৭",
     "bangla_name": "আস-সাফফাত",
     "name": "سورة الصافات",
     "transliteration_en": "As-Saaffaat",
@@ -408,7 +408,7 @@
   },
   {
     "id": 38,
-    "number": "০৩৮",
+    "number": "৩৮",
     "bangla_name": "ছোয়াদ",
     "name": "سورة ص",
     "transliteration_en": "Saad",
@@ -419,7 +419,7 @@
   },
   {
     "id": 39,
-    "number": "০৩৯",
+    "number": "৩৯",
     "bangla_name": "আল-যুমার",
     "name": "سورة الزمر",
     "transliteration_en": "Az-Zumar",
@@ -430,7 +430,7 @@
   },
   {
     "id": 40,
-    "number": "০৪০",
+    "number": "৪০",
     "bangla_name": "আল-মু'মিন",
     "name": "سورة غافر",
     "transliteration_en": "Ghafir",
@@ -441,7 +441,7 @@
   },
   {
     "id": 41,
-    "number": "০৪১",
+    "number": "৪১",
     "bangla_name": "হা-মীম সেজদাহ",
     "name": "سورة فصلت",
     "transliteration_en": "Fussilat",
@@ -452,7 +452,7 @@
   },
   {
     "id": 42,
-    "number": "০৪২",
+    "number": "৪২",
     "bangla_name": "আশ-শুরা",
     "name": "سورة الشورى",
     "transliteration_en": "Ash-Shura",
@@ -463,7 +463,7 @@
   },
   {
     "id": 43,
-    "number": "০৪৩",
+    "number": "৪৩",
     "bangla_name": "যুখরুফ",
     "name": "سورة الزخرف",
     "transliteration_en": "Az-Zukhruf",
@@ -474,7 +474,7 @@
   },
   {
     "id": 44,
-    "number": "০৪৪",
+    "number": "৪৪",
     "bangla_name": "আদ দোখান",
     "name": "سورة الدخان",
     "transliteration_en": "Ad-Dukhaan",
@@ -485,7 +485,7 @@
   },
   {
     "id": 45,
-    "number": "০৪৫",
+    "number": "৪৫",
     "bangla_name": "আল জাসিয়া",
     "name": "سورة الجاثية",
     "transliteration_en": "Al-Jaathiya",
@@ -496,7 +496,7 @@
   },
   {
     "id": 46,
-    "number": "০৪৬",
+    "number": "৪৬",
     "bangla_name": "আল আহক্বাফ",
     "name": "سورة الأحقاف",
     "transliteration_en": "Al-Ahqaf",
@@ -507,7 +507,7 @@
   },
   {
     "id": 47,
-    "number": "০৪৭",
+    "number": "৪৭",
     "bangla_name": "মুহাম্মদ",
     "name": "سورة محمد",
     "transliteration_en": "Muhammad",
@@ -518,7 +518,7 @@
   },
   {
     "id": 48,
-    "number": "০৪৮",
+    "number": "৪৮",
     "bangla_name": "আল ফাতহ",
     "name": "سورة الفتح",
     "transliteration_en": "Al-Fath",
@@ -529,7 +529,7 @@
   },
   {
     "id": 49,
-    "number": "০৪৯",
+    "number": "৪৯",
     "bangla_name": "আল হুজরাত",
     "name": "سورة الحجرات",
     "transliteration_en": "Al-Hujuraat",
@@ -540,7 +540,7 @@
   },
   {
     "id": 50,
-    "number": "০৫০",
+    "number": "৫০",
     "name": "سورة ق",
     "bangla_name": "ক্বাফ",
     "transliteration_en": "Qaaf",
@@ -551,7 +551,7 @@
   },
   {
     "id": 51,
-    "number": "০৫১",
+    "number": "৫১",
     "bangla_name": "আয-যারিয়াত",
     "name": "سورة الذاريات",
     "transliteration_en": "Adh-Dhaariyat",
@@ -562,7 +562,7 @@
   },
   {
     "id": 52,
-    "number": "০৫২",
+    "number": "৫২",
     "bangla_name": "আত্ব তূর",
     "name": "سورة الطور",
     "transliteration_en": "At-Tur",
@@ -573,7 +573,7 @@
   },
   {
     "id": 53,
-    "number": "০৫৩",
+    "number": "৫৩",
     "bangla_name": "আন-নাজম",
     "name": "سورة النجم",
     "transliteration_en": "An-Najm",
@@ -584,7 +584,7 @@
   },
   {
     "id": 54,
-    "number": "০৫৪",
+    "number": "৫৪",
     "bangla_name": "আল ক্বামার",
     "name": "سورة القمر",
     "transliteration_en": "Al-Qamar",
@@ -595,7 +595,7 @@
   },
   {
     "id": 55,
-    "number": "০৫৫",
+    "number": "৫৫",
     "bangla_name": "আর রহমান",
     "name": "سورة الرحمن",
     "transliteration_en": "Ar-Rahmaan",
@@ -606,7 +606,7 @@
   },
   {
     "id": 56,
-    "number": "০৫৬",
+    "number": "৫৬",
     "bangla_name": "আল ওয়াক্বিয়া",
     "name": "سورة الواقعة",
     "transliteration_en": "Al-Waaqia",
@@ -617,7 +617,7 @@
   },
   {
     "id": 57,
-    "number": "০৫৭",
+    "number": "৫৭",
     "bangla_name": "আল হাদীদ",
     "name": "سورة الحديد",
     "transliteration_en": "Al-Hadid",
@@ -628,7 +628,7 @@
   },
   {
     "id": 58,
-    "number": "০৫৮",
+    "number": "৫৮",
     "bangla_name": "আল মুজাদালাহ",
     "name": "سورة المجادلة",
     "transliteration_en": "Al-Mujaadila",
@@ -639,7 +639,7 @@
   },
   {
     "id": 59,
-    "number": "০৫৯",
+    "number": "৫৯",
     "bangla_name": "আল হাশর",
     "name": "سورة الحشر",
     "transliteration_en": "Al-Hashr",
@@ -650,7 +650,7 @@
   },
   {
     "id": 60,
-    "number": "০৬০",
+    "number": "৬০",
     "bangla_name": "আল মুমতাহিনা",
     "name": "سورة الممتحنة",
     "transliteration_en": "Al-Mumtahana",
@@ -661,7 +661,7 @@
   },
   {
     "id": 61,
-    "number": "০৬১",
+    "number": "৬১",
     "bangla_name": "আছ-ছফ",
     "name": "سورة الصف",
     "transliteration_en": "As-Saff",
@@ -672,7 +672,7 @@
   },
   {
     "id": 62,
-    "number": "০৬২",
+    "number": "৬২",
     "bangla_name": "আল জুমুআহ",
     "name": "سورة الجمعة",
     "transliteration_en": "Al-Jumu'a",
@@ -683,7 +683,7 @@
   },
   {
     "id": 63,
-    "number": "০৬৩",
+    "number": "৬৩",
     "bangla_name": "মুনাফিকুন",
     "name": "سورة المنافقون",
     "transliteration_en": "Al-Munaafiqoon",
@@ -694,7 +694,7 @@
   },
   {
     "id": 64,
-    "number": "০৬৪",
+    "number": "৬৪",
     "bangla_name": "আত-তাগাবুন",
     "name": "سورة التغابن",
     "transliteration_en": "At-Taghaabun",
@@ -705,7 +705,7 @@
   },
   {
     "id": 65,
-    "number": "০৬৫",
+    "number": "৬৫",
     "bangla_name": "আত্ব-ত্বালাক্ব",
     "name": "سورة الطلاق",
     "transliteration_en": "At-Talaaq",
@@ -716,7 +716,7 @@
   },
   {
     "id": 66,
-    "number": "০৬৬",
+    "number": "৬৬",
     "bangla_name": "আত-তাহরীম",
     "name": "سورة التحريم",
     "transliteration_en": "At-Tahrim",
@@ -727,7 +727,7 @@
   },
   {
     "id": 67,
-    "number": "০৬৭",
+    "number": "৬৭",
     "bangla_name": "আল মুলক",
     "name": "سورة الملك",
     "transliteration_en": "Al-Mulk",
@@ -738,7 +738,7 @@
   },
   {
     "id": 68,
-    "number": "০৬৮",
+    "number": "৬৮",
     "bangla_name": "আল কলম",
     "name": "سورة القلم",
     "transliteration_en": "Al-Qalam",
@@ -749,7 +749,7 @@
   },
   {
     "id": 69,
-    "number": "০৬৯",
+    "number": "৬৯",
     "bangla_name": "আল হাক্বক্বাহ",
     "name": "سورة الحاقة",
     "transliteration_en": "Al-Haaqqa",
@@ -760,7 +760,7 @@
   },
   {
     "id": 70,
-    "number": "০৭০",
+    "number": "৭০",
     "bangla_name": "আল মা'আরিজ",
     "name": "سورة المعارج",
     "transliteration_en": "Al-Ma'aarij",
@@ -771,7 +771,7 @@
   },
   {
     "id": 71,
-    "number": "০৭১",
+    "number": "৭১",
     "bangla_name": "নূহ",
     "name": "سورة نوح",
     "transliteration_en": "Nooh",
@@ -782,7 +782,7 @@
   },
   {
     "id": 72,
-    "number": "০৭২",
+    "number": "৭২",
     "bangla_name": "আল জিন",
     "name": "سورة الجن",
     "transliteration_en": "Al-Jinn",
@@ -793,7 +793,7 @@
   },
   {
     "id": 73,
-    "number": "০৭৩",
+    "number": "৭৩",
     "bangla_name": "মুযযামমিল",
     "name": "سورة المزمل",
     "transliteration_en": "Al-Muzzammil",
@@ -804,7 +804,7 @@
   },
   {
     "id": 74,
-    "number": "০৭৪",
+    "number": "৭৪",
     "bangla_name": "আল মুদ্দাসসির",
     "name": "سورة المدثر",
     "transliteration_en": "Al-Muddaththir",
@@ -815,7 +815,7 @@
   },
   {
     "id": 75,
-    "number": "০৭৫",
+    "number": "৭৫",
     "bangla_name": "আল ক্বেয়ামাহ",
     "name": "سورة القيامة",
     "transliteration_en": "Al-Qiyaama",
@@ -826,7 +826,7 @@
   },
   {
     "id": 76,
-    "number": "০৭৬",
+    "number": "৭৬",
     "bangla_name": "আল ইনছান",
     "name": "سورة الانسان",
     "transliteration_en": "Al-Insaan",
@@ -837,7 +837,7 @@
   },
   {
     "id": 77,
-    "number": "০৭৭",
+    "number": "৭৭",
     "bangla_name": "আল মুরসালাত",
     "name": "سورة المرسلات",
     "transliteration_en": "Al-Mursalaat",
@@ -848,7 +848,7 @@
   },
   {
     "id": 78,
-    "number": "০৭৮",
+    "number": "৭৮",
     "bangla_name": "আন-নাবা",
     "name": "سورة النبإ",
     "transliteration_en": "An-Naba",
@@ -859,7 +859,7 @@
   },
   {
     "id": 79,
-    "number": "০৭৯",
+    "number": "৭৯",
     "bangla_name": "আন-নযিআ'ত",
     "name": "سورة النازعات",
     "transliteration_en": "An-Naazi'aat",
@@ -870,7 +870,7 @@
   },
   {
     "id": 80,
-    "number": "০৮০",
+    "number": "৮০",
     "bangla_name": "আবাসা",
     "name": "سورة عبس",
     "transliteration_en": "Abasa",
@@ -881,7 +881,7 @@
   },
   {
     "id": 81,
-    "number": "০৮১",
+    "number": "৮১",
     "bangla_name": "আত-তাকভীর",
     "name": "سورة التكوير",
     "transliteration_en": "At-Takwir",
@@ -892,7 +892,7 @@
   },
   {
     "id": 82,
-    "number": "০৮২",
+    "number": "৮২",
     "bangla_name": "আল ইনফিতার",
     "name": "سورة الإنفطار",
     "transliteration_en": "Al-Infitaar",
@@ -903,7 +903,7 @@
   },
   {
     "id": 83,
-    "number": "০৮৩",
+    "number": "৮৩",
     "bangla_name": "আল মুতাফফিফিন",
     "name": "سورة المطففين",
     "transliteration_en": "Al-Mutaffifin",
@@ -914,7 +914,7 @@
   },
   {
     "id": 84,
-    "number": "০৮৪",
+    "number": "৮৪",
     "bangla_name": "আল ইনশিক্বাক্ব",
     "name": "سورة الإنشقاق",
     "transliteration_en": "Al-Inshiqaaq",
@@ -925,7 +925,7 @@
   },
   {
     "id": 85,
-    "number": "০৮৫",
+    "number": "৮৫",
     "bangla_name": "আল বুরূজ",
     "name": "سورة البروج",
     "transliteration_en": "Al-Burooj",
@@ -936,7 +936,7 @@
   },
   {
     "id": 86,
-    "number": "০৮৬",
+    "number": "৮৬",
     "bangla_name": "আত্ব-তারিক্ব",
     "name": "سورة الطارق",
     "transliteration_en": "At-Taariq",
@@ -947,7 +947,7 @@
   },
   {
     "id": 87,
-    "number": "০৮৭",
+    "number": "৮৭",
     "bangla_name": "আল আ'লা",
     "name": "سورة الأعلى",
     "transliteration_en": "Al-A'laa",
@@ -958,7 +958,7 @@
   },
   {
     "id": 88,
-    "number": "০৮৮",
+    "number": "৮৮",
     "bangla_name": "আল গাশিয়াহ",
     "name": "سورة الغاشية",
     "transliteration_en": "Al-Ghaashiya",
@@ -969,7 +969,7 @@
   },
   {
     "id": 89,
-    "number": "০৮৯",
+    "number": "৮৯",
     "bangla_name": "আল ফজর",
     "name": "سورة الفجر",
     "transliteration_en": "Al-Fajr",
@@ -980,7 +980,7 @@
   },
   {
     "id": 90,
-    "number": "০৯০",
+    "number": "৯০",
     "bangla_name": "আল বালাদ",
     "name": "سورة البلد",
     "transliteration_en": "Al-Balad",
@@ -991,7 +991,7 @@
   },
   {
     "id": 91,
-    "number": "০৯১",
+    "number": "৯১",
     "bangla_name": "আশ-শামস",
     "name": "سورة الشمس",
     "transliteration_en": "Ash-Shams",
@@ -1002,7 +1002,7 @@
   },
   {
     "id": 92,
-    "number": "০৯২",
+    "number": "৯২",
     "bangla_name": "আল লায়ল",
     "name": "سورة الليل",
     "transliteration_en": "Al-Lail",
@@ -1013,7 +1013,7 @@
   },
   {
     "id": 93,
-    "number": "০৯৩",
+    "number": "৯৩",
     "bangla_name": "আদ্ব-দ্বোহা",
     "name": "سورة الضحى",
     "transliteration_en": "Ad-Dhuhaa",
@@ -1024,7 +1024,7 @@
   },
   {
     "id": 94,
-    "number": "০৯৪",
+    "number": "৯৪",
     "bangla_name": "ইনশিরাহ",
     "name": "سورة الشرح",
     "transliteration_en": "Al-Insharh",
@@ -1035,7 +1035,7 @@
   },
   {
     "id": 95,
-    "number": "০৯৫",
+    "number": "৯৫",
     "bangla_name": "ত্বীন",
     "name": "سورة التين",
     "transliteration_en": "At-Tin",
@@ -1046,7 +1046,7 @@
   },
   {
     "id": 96,
-    "number": "০৯৬",
+    "number": "৯৬",
     "bangla_name": "আলাক",
     "name": "سورة العلق",
     "transliteration_en": "Al-Alaq",
@@ -1057,7 +1057,7 @@
   },
   {
     "id": 97,
-    "number": "০৯৭",
+    "number": "৯৭",
     "bangla_name": "কদর",
     "name": "سورة القدر",
     "transliteration_en": "Al-Qadr",
@@ -1068,7 +1068,7 @@
   },
   {
     "id": 98,
-    "number": "০৯৮",
+    "number": "৯৮",
     "bangla_name": "বাইয়্যিনাহ",
     "name": "سورة البينة",
     "transliteration_en": "Al-Bayyina",
@@ -1079,7 +1079,7 @@
   },
   {
     "id": 99,
-    "number": "০৯৯",
+    "number": "৯৯",
     "bangla_name": "যিলযাল",
     "name": "سورة الزلزلة",
     "transliteration_en": "Az-Zalzala",

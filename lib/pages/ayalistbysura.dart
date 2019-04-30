@@ -45,20 +45,8 @@ class AyaListBytate extends State<AyaListBySura> {
           preferredSize: Size.fromHeight(30.0),
           child: AppBar(
             backgroundColor: Colors.teal,
-            iconTheme: IconThemeData(color: Colors.black),
-            title: TabBar(
-                indicator: UnderlineTabIndicator(
-                  insets: EdgeInsets.symmetric(horizontal: 5),
-                ),
-                onTap: (val) {},
-                controller: controller,
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.white,
-                tabs: <Widget>[
-                  Tab(
-                    icon: Icon(Icons.home),
-                  )
-                ]),
+            iconTheme: IconThemeData(color: Colors.white),
+            title: Text(""),
           )),
       body: Container(
         child: ListView.builder(
@@ -70,28 +58,10 @@ class AyaListBytate extends State<AyaListBySura> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          new Text(AllSuraListArabic[i]["AyahTextAr"],
-                              textAlign: TextAlign.right),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          new Text(AllSuraListbengali[i]['id'] + AllSuraListbengali[i]['text'],
-                              textAlign: TextAlign.left),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      new Text(AllSuraListArabic[i]["AyahTextAr"],
+                          textAlign: TextAlign.right, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                      new Text(AllSuraListbengali[i]['id'] + AllSuraListbengali[i]['text'],
+                        textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),
                     ],
                   ),
                   decoration: new BoxDecoration(
