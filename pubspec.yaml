@@ -51,6 +51,8 @@ flutter:
     - assets/quran_arabic.json
     - assets/quran_english.json
     - assets/quran_bengali.json
+    - assets/quran/1.json
+    - assets/quran/2.json
     - assets/quran/104.json
   #  - images/a_dot_ham.jpeg
 

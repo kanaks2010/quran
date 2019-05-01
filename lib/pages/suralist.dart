@@ -23,7 +23,7 @@ class SuraListState extends State<SuraList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(30.0),
+          preferredSize: Size.fromHeight(40.0),
           child: AppBar(
             backgroundColor: Color(0xFF009484),
             iconTheme: IconThemeData(color: Colors.white),
@@ -52,30 +52,18 @@ class SuraItemState extends State<SuraItem> {
 
   List QranListData = [];
   List AllSuraList = [];
-
   String imgUrl;
-  String specificSura = 'assets/sura_list.json';
 
   loadQranListData() async {
-    var jsonString = await rootBundle.loadString(specificSura);
+    var jsonString = await rootBundle.loadString('assets/sura_list.json');
     setState(() {
       this.QranListData = json.decode(jsonString);
     });
   }
-
-  loadAllSuraListData() async {
-    var jsonString = await rootBundle.loadString("assets/quran_bengali.json");
-    setState(() {
-      this.AllSuraList = json.decode(jsonString);
-    });
-    print(this.AllSuraList.length);
-  }
-
   @override
   void initState() {
     super.initState();
     loadQranListData();
-    loadAllSuraListData();
   }
 
   String _setImage(String imgtext) {
@@ -99,14 +87,10 @@ class SuraItemState extends State<SuraItem> {
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                   child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        // suraEach = Colors.teal;
-                      });
-                      print("Card Tapped");
+                    onTapUp: (val) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AyaListBySura()),
+                        MaterialPageRoute(builder: (context) => AyaListBySura(QranListData[i])),
                       );
                     },
                     child: Card(

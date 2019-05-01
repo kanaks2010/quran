@@ -26,7 +26,7 @@ class BanglaQuranState extends State<BanglaQuran> {
     return Scaffold(
       backgroundColor: Colors.cyan,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(30.0),
+        preferredSize: Size.fromHeight(40.0),
         child: AppBar(
           backgroundColor: Colors.teal,
           iconTheme: IconThemeData(color: Colors.black),
