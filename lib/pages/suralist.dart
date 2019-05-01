@@ -40,18 +40,24 @@ class SuraListState extends State<SuraList> {
 }
 
 class SuraItem extends StatefulWidget {
+
+
   SuraItemState createState() => SuraItemState();
 }
 
 class SuraItemState extends State<SuraItem> {
-  var suraBgc = const Color(0xFF2ecc72);
+  var suraBgc = const Color(0xFFA2D0C9);
+  var suraBgc23 = const Color(0xFF2ecc72);
+  var suraBgc2 = const Color(0xFF50A9B7);
+
   List QranListData = [];
   List AllSuraList = [];
 
   String imgUrl;
+  String specificSura = 'assets/sura_list.json';
 
   loadQranListData() async {
-    var jsonString = await rootBundle.loadString("assets/sura_list.json");
+    var jsonString = await rootBundle.loadString(specificSura);
     setState(() {
       this.QranListData = json.decode(jsonString);
     });

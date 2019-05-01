@@ -5,7 +5,7 @@ import 'package:quran/pages/suralist.dart';
 
 void main() {
 
-  runApp(MaterialApp(title: 'My App', home: BanglaQuran()));
+  runApp(MaterialApp(title: 'My App', home: BanglaQuran(), debugShowCheckedModeBanner: false,));
 }
 
 class BanglaQuran extends StatefulWidget {
