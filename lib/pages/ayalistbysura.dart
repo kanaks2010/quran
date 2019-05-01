@@ -22,6 +22,7 @@ class AyaListBytate extends State<AyaListBySura> {
   List AllSuraListArabic = [];
   List AllSuraListbengali = [];
   var ayaCount = 0;
+  var ayaNumberBn;
 
   loadAllSuraListData() async {
     var jsonString = await rootBundle
@@ -59,6 +60,7 @@ class AyaListBytate extends State<AyaListBySura> {
             backgroundColor: Colors.teal,
             iconTheme: IconThemeData(color: Colors.white),
             title: Text("সূরা " + this.suranInfo["bangla_name"]),
+            centerTitle: true,
           )),
       body: Container(
         child: ListView.builder(

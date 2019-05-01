@@ -27,7 +27,11 @@ class SuraListState extends State<SuraList> {
           child: AppBar(
             backgroundColor: Color(0xFF009484),
             iconTheme: IconThemeData(color: Colors.white),
-            title:  Text(""),
+            title: Text(
+              "সূরাসমূহ",
+              textAlign: TextAlign.right,
+            ),
+            centerTitle: true,
           )),
       body: TabBarView(
         controller: controller,
@@ -40,8 +44,6 @@ class SuraListState extends State<SuraList> {
 }
 
 class SuraItem extends StatefulWidget {
-
-
   SuraItemState createState() => SuraItemState();
 }
 
@@ -60,6 +62,7 @@ class SuraItemState extends State<SuraItem> {
       this.QranListData = json.decode(jsonString);
     });
   }
+
   @override
   void initState() {
     super.initState();
@@ -90,7 +93,9 @@ class SuraItemState extends State<SuraItem> {
                     onTapUp: (val) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AyaListBySura(QranListData[i])),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                AyaListBySura(QranListData[i])),
                       );
                     },
                     child: Card(
@@ -100,9 +105,8 @@ class SuraItemState extends State<SuraItem> {
                         borderRadius: BorderRadius.circular(0),
                       ),
                       child: Container(
-
                         padding:
-                        EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+                            EdgeInsets.symmetric(horizontal: 5, vertical: 15),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,14 +123,16 @@ class SuraItemState extends State<SuraItem> {
                                   width: 3,
                                 ),
                                 Text("${QranListData[i]["number"]}",
-                                    style: TextStyle(fontSize: 17, )),
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                    )),
                                 SizedBox(
                                   width: 3,
                                 ),
                                 Text(
                                   QranListData[i]["bangla_name"] +
                                       ""
-                                          "(${QranListData[i]['total_verses_b']})",
+                                      "(${QranListData[i]['total_verses_b']})",
                                   style: TextStyle(
                                     fontSize: 17,
                                   ),
@@ -136,8 +142,7 @@ class SuraItemState extends State<SuraItem> {
                             Container(),
                             Text(QranListData[i]["name"],
                                 style: TextStyle(
-                                  fontSize: 17,fontWeight: FontWeight.bold
-                                )),
+                                    fontSize: 17, fontWeight: FontWeight.bold)),
                           ],
                         ),
                       ),
