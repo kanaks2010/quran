@@ -30,9 +30,9 @@ class AyaListBytate extends State<AyaListBySura> {
     setState(() {
       this.AllSuraListArabic = json.decode(jsonString);
       this.ayaCount = int.parse("${this.suranInfo['total_verses']}");
+      print("Aya count '${this.ayaCount}'");
+
     });
-    print("Sura Info " + this.suranInfo["bangla_name"]);
-    print("Sura Info " + '${this.suranInfo['total_verses']}');
   }
 
   loadAllSuraListAData() async {
@@ -40,7 +40,6 @@ class AyaListBytate extends State<AyaListBySura> {
     setState(() {
       this.AllSuraListbengali = json.decode(jsonString);
     });
-    print(this.AllSuraListbengali.length);
   }
 
   @override
@@ -93,7 +92,7 @@ class AyaListBytate extends State<AyaListBySura> {
                           ),
                           Expanded(
                               child: Text(
-                            AllSuraListArabic[0]["verse"]["verse_${i + 1}"],
+                            AllSuraListArabic[0]["verse"]["verse_${i+1}"],
                             style: TextStyle(
                                 fontWeight: FontWeight.w400, fontSize: 30),
                             textAlign: TextAlign.right,

@@ -53,6 +53,12 @@ flutter:
     - assets/quran_bengali.json
     - assets/quran/1.json
     - assets/quran/2.json
+    - assets/quran/3.json
+    - assets/quran/4.json
+    - assets/quran/5.json
+    - assets/quran/6.json
+    - assets/quran/7.json
+    - assets/quran/8.json
     - assets/quran/104.json
   #  - images/a_dot_ham.jpeg
 
