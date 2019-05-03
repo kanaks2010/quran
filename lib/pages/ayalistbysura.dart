@@ -25,6 +25,7 @@ class AyaListBytate extends State<AyaListBySura> {
   var ayaNumberBn;
 
   loadAllSuraListData() async {
+    print("${this.suranInfo['id']}");
     var jsonString = await rootBundle
         .loadString("assets/quran/${this.suranInfo['id']}.json");
     setState(() {
