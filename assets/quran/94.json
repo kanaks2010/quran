@@ -1,0 +1,37 @@
+[
+  {
+    "verse": {
+      "verse_0": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      "verse_1": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+      "verse_2": "وَوَضَعْنَا عَنْكَ وِزْرَكَ",
+      "verse_3": "الَّذِي أَنْقَضَ ظَهْرَكَ",
+      "verse_4": "وَرَفَعْنَا لَكَ ذِكْرَكَ",
+      "verse_5": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+      "verse_6": "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+      "verse_7": "فَإِذَا فَرَغْتَ فَانْصَبْ",
+      "verse_8": "وَإِلَىٰ رَبِّكَ فَارْغَبْ"
+    },
+    "verse_en": {
+      "verse_0": "In the name of God, the Gracious, the Merciful.",
+      "verse_1": "Did We not soothe your heart?",
+      "verse_2": "And lift from you your burden.",
+      "verse_3": "Which weighed down your back?",
+      "verse_4": "And raised for you your reputation?",
+      "verse_5": "With hardship comes ease.",
+      "verse_6": "With hardship comes ease.",
+      "verse_7": "When your work is done, turn to devotion.",
+      "verse_8": "And to your Lord turn for everything."
+    },
+    "verse_bn": {
+      "verse_0": "শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।",
+      "verse_1":"আমি কি আপনার বক্ষ উম্মুক্ত করে দেইনি?",
+      "verse_2":"আমি লাঘব করেছি আপনার বোঝা,",
+      "verse_3":"যা ছিল আপনার জন্যে অতিশয় দুঃসহ।",
+      "verse_4":"আমি আপনার আলোচনাকে সমুচ্চ করেছি।",
+      "verse_5":"নিশ্চয় কষ্টের সাথে স্বস্তি রয়েছে।",
+      "verse_6":"নিশ্চয় কষ্টের সাথে স্বস্তি রয়েছে।",
+      "verse_7":"অতএব, যখন অবসর পান পরিশ্রম করুন।",
+      "verse_8":"এবং আপনার পালনকর্তার প্রতি মনোনিবেশ করুন।"
+    }
+  }
+]

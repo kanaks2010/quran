@@ -1,0 +1,25 @@
+[
+  {
+    "verse": {
+      "verse_0": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      "verse_1": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+      "verse_2": "اللَّهُ الصَّمَدُ",
+      "verse_3": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "verse_4": "وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ"
+    },
+    "verse_en": {
+      "verse_0": "In the name of God, the Gracious, the Merciful.",
+      "verse_1": "Say, \"He is God, the One.",
+      "verse_2": "God, the Absolute.",
+      "verse_3": "He begets not, nor was He begotten.",
+      "verse_4": "And there is nothing comparable to Him.\""
+    },
+    "verse_bn": {
+      "verse_0": "শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।",
+      "verse_1": "বলুন, তিনি আল্লাহ, এক,",
+      "verse_2": "আল্লাহ অমুখাপেক্ষী,",
+      "verse_3": "তিনি কাউকে জন্ম দেননি এবং কেউ তাকে জন্ম দেয়নি",
+      "verse_4": "এবং তার সমতুল্য কেউ নেই।"
+    }
+  }
+]

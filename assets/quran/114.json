@@ -1,0 +1,31 @@
+[
+  {
+    "verse": {
+      "verse_0": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      "verse_1": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+      "verse_2": "مَلِكِ النَّاسِ",
+      "verse_3": "إِلَٰهِ النَّاسِ",
+      "verse_4": "مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
+      "verse_5": "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
+      "verse_6": "مِنَ الْجِنَّةِ وَالنَّاسِ"
+    },
+    "verse_en": {
+      "verse_0": "In the name of God, the Gracious, the Merciful.",
+      "verse_1": "Say, \"I seek refuge in the Lord of mankind.",
+      "verse_2": "The King of mankind.",
+      "verse_3": "The God of mankind.",
+      "verse_4": "From the evil of the sneaky whisperer.",
+      "verse_5": "Who whispers into the hearts of people.",
+      "verse_6": "From among jinn and among people.\""
+    },
+    "verse_bn": {
+      "verse_0": "শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।",
+      "verse_1": "বলুন, আমি আশ্রয় গ্রহণ করিতেছি মানুষের পালনকর্তার,",
+      "verse_2": "মানুষের অধিপতির,",
+      "verse_3": "মানুষের মা’বুদের",
+      "verse_4": "তার অনিষ্ট থেকে, যে কুমন্ত্রণা দেয় ও আত্নগোপন করে,",
+      "verse_5": "যে কুমন্ত্রণা দেয় মানুষের অন্তরে",
+      "verse_6": "জ্বিনের মধ্য থেকে অথবা মানুষের মধ্য থেকে।"
+    }
+  }
+]

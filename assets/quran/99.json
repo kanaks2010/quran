@@ -1,0 +1,37 @@
+[
+  {
+    "verse": {
+      "verse_0": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      "verse_1": "إِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا",
+      "verse_2": "وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا",
+      "verse_3": "وَقَالَ الْإِنْسَانُ مَا لَهَا",
+      "verse_4": "يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا",
+      "verse_5": "بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا",
+      "verse_6": "يَوْمَئِذٍ يَصْدُرُ النَّاسُ أَشْتَاتًا لِيُرَوْا أَعْمَالَهُمْ",
+      "verse_7": "فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ",
+      "verse_8": "وَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ"
+    },
+    "verse_en": {
+      "verse_0": "In the name of God, the Gracious, the Merciful.",
+      "verse_1": "When the earth is shaken with its quake.",
+      "verse_2": "And the earth brings out its loads.",
+      "verse_3": "And man says, \"What is the matter with it?\"",
+      "verse_4": "On that Day, it will tell its tales.",
+      "verse_5": "For your Lord will have inspired it.",
+      "verse_6": "On that Day, the people will emerge in droves, to be shown their works.",
+      "verse_7": "Whoever has done an atom's weight of good will see it.",
+      "verse_8": "And whoever has done an atom's weight of evil will see it."
+    },
+    "verse_bn": {
+      "verse_0": "শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।",
+      "verse_1": "যখন পৃথিবী তার কম্পনে প্রকম্পিত হবে,",
+      "verse_2": "যখন সে তার বোঝা বের করে দেবে।",
+      "verse_3": "এবং মানুষ বলবে, এর কি হল ?",
+      "verse_4": "সেদিন সে তার বৃত্তান্ত বর্ণনা করবে,",
+      "verse_5": "কারণ, আপনার পালনকর্তা তাকে আদেশ করবেন।",
+      "verse_6": "সেদিন মানুষ বিভিন্ন দলে প্রকাশ পাবে, যাতে তাদেরকে তাদের কৃতকর্ম দেখানো হয়।",
+      "verse_7": "অতঃপর কেউ অণু পরিমাণ সৎকর্ম করলে তা দেখতে পাবে",
+      "verse_8": "এবং কেউ অণু পরিমাণ অসৎকর্ম করলে তাও দেখতে পাবে।"
+    }
+  }
+]

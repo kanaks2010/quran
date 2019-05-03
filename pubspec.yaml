@@ -121,7 +121,50 @@ flutter:
     - assets/quran/68.json
     - assets/quran/69.json
     - assets/quran/70.json
+    - assets/quran/71.json
+    - assets/quran/72.json
+    - assets/quran/73.json
+    - assets/quran/74.json
+    - assets/quran/75.json
+    - assets/quran/76.json
+    - assets/quran/77.json
+    - assets/quran/78.json
+    - assets/quran/79.json
+    - assets/quran/80.json
+    - assets/quran/81.json
+    - assets/quran/82.json
+    - assets/quran/83.json
+    - assets/quran/84.json
+    - assets/quran/85.json
+    - assets/quran/86.json
+    - assets/quran/87.json
+    - assets/quran/88.json
+    - assets/quran/89.json
+    - assets/quran/90.json
+    - assets/quran/91.json
+    - assets/quran/92.json
+    - assets/quran/93.json
+    - assets/quran/94.json
+    - assets/quran/95.json
+    - assets/quran/96.json
+    - assets/quran/97.json
+    - assets/quran/98.json
+    - assets/quran/99.json
+    - assets/quran/100.json
+    - assets/quran/101.json
+    - assets/quran/102.json
+    - assets/quran/103.json
     - assets/quran/104.json
+    - assets/quran/105.json
+    - assets/quran/106.json
+    - assets/quran/107.json
+    - assets/quran/108.json
+    - assets/quran/109.json
+    - assets/quran/110.json
+    - assets/quran/111.json
+    - assets/quran/112.json
+    - assets/quran/113.json
+    - assets/quran/114.json
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
