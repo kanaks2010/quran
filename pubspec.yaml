@@ -58,6 +58,7 @@ flutter:
     - assets/images/makka.png
     - assets/images/madina.png
     - assets/images/bgImg.png
+    - assets/images/qlauncher.png
     - assets/sura_list.json
     - assets/quran/1.json
     - assets/quran/2.json

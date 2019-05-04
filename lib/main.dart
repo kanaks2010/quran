@@ -5,7 +5,7 @@ import 'package:quran/pages/suralist.dart';
 
 void main() {
 
-  runApp(MaterialApp(title: 'My App', home: BanglaQuran(), debugShowCheckedModeBanner: false,));
+  runApp(MaterialApp(title: 'Bangla Quran', home: BanglaQuran(), debugShowCheckedModeBanner: false,));
 }
 
 class BanglaQuran extends StatefulWidget {
@@ -44,7 +44,7 @@ class BanglaQuranState extends State<BanglaQuran> {
             ),
           ],
           title: Text(
-            "Bangla Quran",
+            "বাংলা কুরআন",
             style: TextStyle(color: Colors.white, fontSize: 15),
           ),
         ),
@@ -76,7 +76,7 @@ class BanglaQuranState extends State<BanglaQuran> {
                     },
                     child: Stack(
                       children: <Widget>[
-                        Image.asset("assets/images/quran.png"),
+                        Image.asset("assets/images/qlauncher.png", height: 100, width: 100,),
                       ],
                     ),
                   ),

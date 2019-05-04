@@ -30,6 +30,12 @@ class AyaListBytate extends State<AyaListBySura> {
   var onlyArabic = true;
   var onlyBangla = true;
   var onlyEnglish = true;
+  var arEng = false;
+  var arBng = false;
+  var onlyEng = false;
+  var onlyBng = false;
+  var onlyAr = false;
+  var all = true;
   final snackBarkey = new GlobalKey<ScaffoldState>();
 
   loadAllSuraListData() async {
@@ -189,97 +195,137 @@ class AyaListBytate extends State<AyaListBySura> {
                 data: Theme.of(context).copyWith(
                   cardColor: Colors.teal,
                 ),
-                child: PopupMenuButton(
-                  icon: Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  ),
-                  offset: Offset(0, 35),
-                  elevation: 10,
-                  onSelected: (value) {
-                    if (value == 'arEng') {
-                      setState(() {
-                        this.onlyEnglish = true;
-                        this.onlyBangla = false;
-                        this.onlyArabic = true;
-                      });
-                    } else if (value == 'arBng') {
-                      setState(() {
-                        this.onlyEnglish = false;
-                        this.onlyBangla = true;
-                        this.onlyArabic = true;
-                      });
-                    } else if (value == 'onlyEng') {
-                      setState(() {
-                        this.onlyEnglish = true;
-                        this.onlyBangla = false;
-                        this.onlyArabic = false;
-                      });
-                    } else if (value == 'onlyBng') {
-                      setState(() {
-                        this.onlyEnglish = false;
-                        this.onlyBangla = true;
-                        this.onlyArabic = false;
-                      });
-                    } else if (value == 'onlyAr') {
-                      setState(() {
-                        this.onlyEnglish = false;
-                        this.onlyBangla = false;
-                        this.onlyArabic = true;
-                      });
-                    } else if (value == 'all') {
-                      setState(() {
-                        this.onlyEnglish = true;
-                        this.onlyBangla = true;
-                        this.onlyArabic = true;
-                      });
-                    }
-                  },
-                  itemBuilder: (BuildContext context) {
-                    return [
-                      CheckedPopupMenuItem(
-                        child: ListTileTheme(
-                          iconColor: Colors.white,
-                          child: Text("Arbic + English",
-                              style: TextStyle(color: Colors.white)),
+                child: InkWell(
+                  onTap: (){},
+                  child: PopupMenuButton(
+                    icon: Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    ),
+                    offset: Offset(0, 35),
+                    elevation: 10,
+                    onSelected: (value) {
+                      if (value == 'arEng') {
+                        setState(() {
+                          this.onlyEnglish = true;
+                          this.onlyBangla = false;
+                          this.onlyArabic = true;
+                          this. arEng = true;
+                          this. arBng = false;
+                          this. onlyEng = false;
+                          this. onlyBng = false;
+                          this. onlyAr = false;
+                          this. all = false;
+                        });
+                      } else if (value == 'arBng') {
+                        setState(() {
+                          this.onlyEnglish = false;
+                          this.onlyBangla = true;
+                          this.onlyArabic = true;
+                          this. arEng = false;
+                          this. arBng = true;
+                          this. onlyEng = false;
+                          this. onlyBng = false;
+                          this. onlyAr = false;
+                          this. all = false;
+                        });
+                      } else if (value == 'onlyEng') {
+                        setState(() {
+                          this.onlyEnglish = true;
+                          this.onlyBangla = false;
+                          this.onlyArabic = false;
+                          this. arEng = false;
+                          this. arBng = false;
+                          this. onlyEng = true;
+                          this. onlyBng = false;
+                          this. onlyAr = false;
+                          this. all = false;
+                        });
+                      } else if (value == 'onlyBng') {
+                        setState(() {
+                          this.onlyEnglish = false;
+                          this.onlyBangla = true;
+                          this.onlyArabic = false;
+                          this. arEng = false;
+                          this. arBng = false;
+                          this. onlyEng = false;
+                          this. onlyBng = true;
+                          this. onlyAr = false;
+                          this. all = false;
+                        });
+                      } else if (value == 'onlyAr') {
+                        setState(() {
+                          this.onlyEnglish = false;
+                          this.onlyBangla = false;
+                          this.onlyArabic = true;
+                          this. arEng = false;
+                          this. arBng = false;
+                          this. onlyEng = false;
+                          this. onlyBng = false;
+                          this. onlyAr = true;
+                          this. all = false;
+                        });
+                      } else if (value == 'all') {
+                        setState(() {
+                          this.onlyEnglish = true;
+                          this.onlyBangla = true;
+                          this.onlyArabic = true;
+                          this.arEng = false;
+                          this.arBng = false;
+                          this.onlyEng = false;
+                          this.onlyBng = false;
+                          this.onlyAr = false;
+                          this.all = true;
+                        });
+                      }
+                    },
+                    itemBuilder: (BuildContext context) {
+                      return [
+
+                        CheckedPopupMenuItem(
+                          child: ListTileTheme(
+                            iconColor: Colors.white,
+                            child: Text("Arbic + English",
+                                style: TextStyle(color: Colors.white)),
+                          ),
+                          checked: this.arEng,
+                          value: "arEng",
                         ),
-                        checked: false,
-                        value: "arEng",
-                      ),
-                      CheckedPopupMenuItem(
-                        child: Text("আরবি + বাংলা",
-                            style: TextStyle(color: Colors.white)),
-                        checked: false,
-                        value: "arBng",
-                      ),
-                      CheckedPopupMenuItem(
-                        child: Text("Only English",
-                            style: TextStyle(color: Colors.white)),
-                        checked: false,
-                        value: "onlyEng",
-                      ),
-                      CheckedPopupMenuItem(
-                        child: Text("শুধু বাংলা",
-                            style: TextStyle(color: Colors.white)),
-                        checked: false,
-                        value: "onlyBng",
-                      ),
-                      CheckedPopupMenuItem(
-                        child: Text("Only Arabic",
-                            style: TextStyle(color: Colors.white)),
-                        checked: false,
-                        value: "onlyAr",
-                      ),
-                      CheckedPopupMenuItem(
-                        child: Text("All",
-                            style: TextStyle(color: Colors.white)),
-                        checked: true,
-                        value: "all",
-                      ),
-                    ];
-                  },
+                        CheckedPopupMenuItem(
+                          child: Text("আরবি + বাংলা",
+                              style: TextStyle(color: Colors.white)),
+                          checked: this.arBng,
+                          value: "arBng",
+                        ),
+                        CheckedPopupMenuItem(
+                          child: Text("Only English",
+                              style: TextStyle(color: Colors.white)),
+                          checked: this.onlyEng,
+                          value: "onlyEng",
+                        ),
+                        CheckedPopupMenuItem(
+                          child: Text("শুধু বাংলা",
+                              style: TextStyle(color: Colors.white)),
+                          checked: this.onlyBng,
+                          value: "onlyBng",
+                        ),
+                        CheckedPopupMenuItem(
+                          child: Text("Only Arabic",
+                              style: TextStyle(color: Colors.white)),
+                          checked: this.onlyAr,
+                          value: "onlyAr",
+                        ),
+                        CheckedPopupMenuItem(
+                          child: Text("All",
+                              style: TextStyle(color: Colors.white)),
+                          checked: this.all,
+                          value: "all",
+                        ),
+                      ];
+                    },
+                  ),
                 ),
-              )
+              ),
             ],
           )),
       body: Container(
