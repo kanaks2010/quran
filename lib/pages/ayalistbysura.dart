@@ -47,6 +47,14 @@ class AyaListBytate extends State<AyaListBySura> {
     controller = new TabController(vsync: null, length: 1, initialIndex: 0);
   }
 
+  getBismillah(i, j) {
+    if (i != null && i == 0) {
+      return j;
+    } else {
+      return "";
+    }
+  }
+
   showToast(String txt) {
     Fluttertoast.showToast(
         msg: " ${txt} কপি সম্পন্ন হয়েছে ",
@@ -58,8 +66,8 @@ class AyaListBytate extends State<AyaListBySura> {
         fontSize: 16.0);
   }
 
-  _showDialog(
-      context, String ayaNum, String arabicTxt, String bnTxt, String enTxt) {
+  _showDialog(context, String ayaNum, String arabicTxt, String bnTxt,
+      String enTxt) {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -79,7 +87,8 @@ class AyaListBytate extends State<AyaListBySura> {
                           onPressed: () {
                             Clipboard.setData(new ClipboardData(
                                 text:
-                                    "সূরা ${this.suranInfo['bangla_name']}: (${this.suranInfo['id']}:${ayaNum}): \n ${bnTxt}"));
+                                "সূরা ${this.suranInfo['bangla_name']}: (${this
+                                    .suranInfo['id']}:${ayaNum}): \n ${bnTxt}"));
                             Navigator.of(context).pop();
                             showToast("${this.suranInfo['id']}:${ayaNum}");
                           },
@@ -90,7 +99,8 @@ class AyaListBytate extends State<AyaListBySura> {
                     onPressed: () {
                       Clipboard.setData(new ClipboardData(
                           text:
-                              "সূরা ${this.suranInfo['bangla_name']}: (${this.suranInfo['id']}:${ayaNum}): \n ${bnTxt}"));
+                          "সূরা ${this.suranInfo['bangla_name']}: (${this
+                              .suranInfo['id']}:${ayaNum}): \n ${bnTxt}"));
                       Navigator.of(context).pop();
                       showToast("${this.suranInfo['id']}:${ayaNum}");
                     },
@@ -110,7 +120,8 @@ class AyaListBytate extends State<AyaListBySura> {
                           onPressed: () {
                             Clipboard.setData(new ClipboardData(
                                 text:
-                                    "সূরা ${this.suranInfo['bangla_name']}: (${this.suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${bnTxt}"));
+                                "সূরা ${this.suranInfo['bangla_name']}: (${this
+                                    .suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${bnTxt}"));
                             Navigator.of(context).pop();
                             showToast("${this.suranInfo['id']}:${ayaNum}");
                           },
@@ -121,7 +132,8 @@ class AyaListBytate extends State<AyaListBySura> {
                     onPressed: () {
                       Clipboard.setData(new ClipboardData(
                           text:
-                              "সূরা ${this.suranInfo['bangla_name']}: (${this.suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${bnTxt}"));
+                          "সূরা ${this.suranInfo['bangla_name']}: (${this
+                              .suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${bnTxt}"));
                       Navigator.of(context).pop();
                       showToast("${this.suranInfo['id']}:${ayaNum}");
                     },
@@ -141,7 +153,9 @@ class AyaListBytate extends State<AyaListBySura> {
                           onPressed: () {
                             Clipboard.setData(new ClipboardData(
                                 text:
-                                    "${this.suranInfo['transliteration_en']}: (${this.suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${enTxt}"));
+                                "${this
+                                    .suranInfo['transliteration_en']}: (${this
+                                    .suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${enTxt}"));
                             Navigator.of(context).pop();
                             showToast("${this.suranInfo['id']}:${ayaNum}");
                           },
@@ -152,7 +166,8 @@ class AyaListBytate extends State<AyaListBySura> {
                     onPressed: () {
                       Clipboard.setData(new ClipboardData(
                           text:
-                              "${this.suranInfo['transliteration_en']}: (${this.suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${enTxt}"));
+                          "${this.suranInfo['transliteration_en']}: (${this
+                              .suranInfo['id']}:${ayaNum}): \n ${arabicTxt} \n ${enTxt}"));
                       Navigator.of(context).pop();
                       showToast("${this.suranInfo['id']}:${ayaNum}");
                     },
@@ -183,7 +198,11 @@ class AyaListBytate extends State<AyaListBySura> {
                 ),
                 offset: Offset(0, 35),
                 elevation: 10,
-                onSelected: (value) => setState(() => {debugPrint(value)}),
+                onSelected: (value) =>
+                    setState(() =>
+                    {
+                    debugPrint(value)
+                    }),
                 itemBuilder: (BuildContext context) {
                   return [
                     CheckedPopupMenuItem(
@@ -213,133 +232,155 @@ class AyaListBytate extends State<AyaListBySura> {
             scrollDirection: Axis.vertical,
             itemCount: this.ayaCount,
 
-            itemBuilder: (BuildContext context, int i) => Container(
-                child: new Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-                    child: GestureDetector(
-                      onLongPress: () {
-                        _showDialog(
-                            context,
-                            "${i + 1}",
-                            AllSuraListArabic[0]["verse"]["verse_${i + 1}"],
-                            AllSuraListArabic[0]["verse_bn"]["verse_${i + 1}"],
-                            AllSuraListArabic[0]["verse_en"]["verse_${i + 1}"]);
-                      },
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+            itemBuilder: (BuildContext context, int i) =>
+                Container(
+                    child: new Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 0, vertical: 15),
+                        child: GestureDetector(
+                          onLongPress: () {
+                            _showDialog(
+                                context,
+                                "${i + 1}",
+                                AllSuraListArabic[0]["verse"]["verse_${i + 1}"],
+                                AllSuraListArabic[0]["verse_bn"]["verse_${i +
+                                    1}"],
+                                AllSuraListArabic[0]["verse_en"]["verse_${i +
+                                    1}"]);
+                          },
+                          child: Column(
                             children: <Widget>[
+                              Text(getBismillah(i, AllSuraListArabic[0]["verse"]
+                              ["verse_${i}"]), style: TextStyle(
+                                  color: Colors.teal, fontSize: 20),),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  Column(
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment
+                                        .start,
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
-                                      CircleAvatar(
-                                        child: Text("${i + 1}",
-                                            style: TextStyle(
-                                              fontSize: 17,
-                                            )),
-                                        foregroundColor: Colors.white,
-                                        backgroundColor: Colors.teal,
-                                        radius: 20,
-                                      ),
-                                      IconButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            shareText =
-                                                "সূরা ${this.suranInfo['bangla_name']}: (${this.suranInfo['id']} : " +
-                                                    "${i + 1})\n" +
-                                                    AllSuraListArabic[0]
-                                                    ["verse"]
-                                                    ["verse_${i + 1}"] +
-                                                    ",\n" +
-                                                    AllSuraListArabic[0]
-                                                    ["verse_bn"]
-                                                    ["verse_${i + 1}"];
-                                          });
-                                          Share.share(shareText);
-                                        },
-                                        icon: Icon(Icons.share),
-                                        color: Colors.blueGrey,
+                                      Column(
+                                        children: <Widget>[
+                                          CircleAvatar(
+                                            child: Text("${i + 1}",
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                )),
+                                            foregroundColor: Colors.white,
+                                            backgroundColor: Colors.teal,
+                                            radius: 20,
+                                          ),
+                                          IconButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                shareText =
+                                                    "সূরা ${this
+                                                        .suranInfo['bangla_name']}: (${this
+                                                        .suranInfo['id']} : " +
+                                                        "${i + 1})\n" +
+                                                        AllSuraListArabic[0]
+                                                        ["verse"]
+                                                        ["verse_${i + 1}"] +
+                                                        ",\n" +
+                                                        AllSuraListArabic[0]
+                                                        ["verse_bn"]
+                                                        ["verse_${i + 1}"];
+                                              });
+                                              Share.share(shareText);
+                                            },
+                                            icon: Icon(Icons.share),
+                                            color: Colors.blueGrey,
+                                          )
+                                        ],
                                       )
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10, vertical: 0),
+                                        child: Text(
+                                          AllSuraListArabic[0]["verse"]
+                                          ["verse_${i + 1}"],
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontFamily: 'Scheherazade',
+                                              fontSize: 30),
+                                          textAlign: TextAlign.right,
+                                        )),
+                                  )
+
+                                ],
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment
+                                        .start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Container(
+                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                                          child: Text(
+                                              AllSuraListArabic[0]["verse_en"]
+                                              ["verse_${i + 1}"],
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300,
+                                                  fontSize: 20),
+                                              textAlign: TextAlign.start),
+                                        ),
+                                      ),
+
                                     ],
                                   )
                                 ],
                               ),
-                              Expanded(
-                                  child: Text(
-                                    AllSuraListArabic[0]["verse"]
-                                    ["verse_${i + 1}"],
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'Scheherazade',
-                                        fontSize: 30),
-                                    textAlign: TextAlign.right,
-                                  )),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Column(
                                 children: <Widget>[
-                                  Expanded(
-                                    child: Text(
-                                        AllSuraListArabic[0]["verse_en"]
-                                        ["verse_${i + 1}"],
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w300,
-                                            fontSize: 20),
-                                        textAlign: TextAlign.start),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Expanded(
-                                    child: Text(
-                                      AllSuraListArabic[0]["verse_bn"]
-                                      ["verse_${i + 1}"],
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 20,
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment
+                                        .start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Container(
+                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                                          child: Text(
+                                            AllSuraListArabic[0]["verse_bn"]
+                                            ["verse_${i + 1}"],
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w300,
+                                              fontSize: 20,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                          ),
+                                        ),
                                       ),
-                                      textAlign: TextAlign.start,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                    ],
+                                  )
                                 ],
-                              )
+                              ),
                             ],
                           ),
-                        ],
-                      ),
-                    )),
-                decoration: new BoxDecoration(
-                    border:
-                    new Border(bottom: BorderSide(color: Colors.teal))))),
+                        )),
+                    decoration: new BoxDecoration(
+                        border:
+                        new Border(bottom: BorderSide(color: Colors.teal))))),
       ),
     );
   }
