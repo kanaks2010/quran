@@ -51,6 +51,7 @@ class SuraItemState extends State<SuraItem> {
   var suraBgc = const Color(0xFFA2D0C9);
   var suraBgc23 = const Color(0xFF2ecc72);
   var suraBgc2 = const Color(0xFF50A9B7);
+  var suraBgc3 ;
 
   List QranListData = [];
   List AllSuraList = [];
@@ -78,13 +79,14 @@ class SuraItemState extends State<SuraItem> {
     return this.imgUrl;
   }
 
-  var id = [
-    "title 1",
-    "title 2",
-    "title 3",
-    "title 4",
-    "title 5",
-  ];
+  int _selectedIndex = null;
+
+  _onSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+      suraBgc3 = const Color(0xFF009484);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,72 +96,92 @@ class SuraItemState extends State<SuraItem> {
           child: ListView.builder(
             itemBuilder: (context, i) {
               return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => AyaListBySura(QranListData[i])),
-                  );
-                },
-                child: Card(
-                    child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              Text("${QranListData[i]["number"]}",
-                                  style: TextStyle(
-                                    fontSize: 17,
-                                  )),
-                              Text(
-                                "সূরা " +
-                                    QranListData[i]["bangla_name"] +
-                                    ""
-                                    "(${QranListData[i]['total_verses_b']})",
-                                style: TextStyle(
-                                  fontSize: 17,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                  onTapDown: (val) {
+                    _onSelected(i);
+                  },
+                  onTapUp: (val){
+                    setState(() {
+                      _selectedIndex = null;
+                    });
+                  },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AyaListBySura(QranListData[i])),
+                    );
+                  },
+                  child: Card(
+                    child: Container(
+                        color: _selectedIndex != null && _selectedIndex == i
+                            ? suraBgc3
+                            : Colors.white,
+                        child: Column(
                           children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 0),
-                              child: Text(QranListData[i]["name"],
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text("${QranListData[i]["number"]}",
+                                          style: TextStyle(
+                                            fontSize: 17,color: _selectedIndex != null && _selectedIndex == i
+                                              ? Colors.white
+                                              : Colors.black,
+                                          )),
+                                      Text(
+                                        "সূরা " +
+                                            QranListData[i]["bangla_name"] +
+                                            ""
+                                            "(${QranListData[i]['total_verses_b']})",
+                                        style: TextStyle(
+                                          fontSize: 17,color: _selectedIndex != null && _selectedIndex == i
+                                            ? Colors.white
+                                            : Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 5, vertical: 0),
+                                      child: Text(QranListData[i]["name"],
+                                          style: TextStyle(
+                                              fontSize: 17,color: _selectedIndex != null && _selectedIndex == i
+                                              ? Colors.white
+                                              : Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 5, vertical: 0),
+                                      child: Image.asset(
+                                        _setImage(
+                                            QranListData[i]["revelation_type"]),
+                                        height: 20,
+                                        width: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 0),
-                              child: Image.asset(
-                                _setImage(QranListData[i]["revelation_type"]),
-                                height: 20,
-                                width: 20,
-                              ),
-                            ),
+                            Divider(
+                              height: 2.0,
+                              color: Colors.teal,
+                            )
                           ],
-                        ),
-                      ],
-                    ),
-                    Divider(
-                      height: 2.0,
-                      color: Colors.teal,
-                    )
-                  ],
-                )),
-              );
+                        )),
+                  ));
             },
             itemCount: QranListData.length,
           ),
@@ -168,3 +190,22 @@ class SuraItemState extends State<SuraItem> {
     );
   }
 }
+
+/*
+
+Widget bacS() {
+  return ListView.builder(
+      itemCount: _listViewData.length,
+      itemBuilder: (context, index)
+  =>
+      Container(
+        color: _selectedIndex != null && _selectedIndex == index
+            ? Colors.red
+            : Colors.white,
+        child: ListTile(
+          title: Text(_listViewData[index]),
+          onTap: () => _onSelected(index),
+        ),
+      )
+  ,
+}*/
