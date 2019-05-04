@@ -78,76 +78,91 @@ class SuraItemState extends State<SuraItem> {
     return this.imgUrl;
   }
 
+  var id = [
+    "title 1",
+    "title 2",
+    "title 3",
+    "title 4",
+    "title 5",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Color(0xFF2C3335),
           child: ListView.builder(
-              itemCount: QranListData.length,
-              itemBuilder: (BuildContext context, int i) => Container(
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                  child: GestureDetector(
-                    onTapUp: (val) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                AyaListBySura(QranListData[i])),
-                      );
-                    },
-                    child: Card(
-                      color: suraBgc,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Image.asset(
-                                  _setImage(QranListData[i]["revelation_type"]),
-                                  height: 20,
-                                  width: 20,
-                                ),
-                                SizedBox(
-                                  width: 3,
-                                ),
-                                Text("${QranListData[i]["number"]}",
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                    )),
-                                SizedBox(
-                                  width: 3,
-                                ),
-                                Text(
-                                  QranListData[i]["bangla_name"] +
-                                      ""
-                                      "(${QranListData[i]['total_verses_b']})",
+            itemBuilder: (context, i) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AyaListBySura(QranListData[i])),
+                  );
+                },
+                child: Card(
+                    child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Text("${QranListData[i]["number"]}",
                                   style: TextStyle(
                                     fontSize: 17,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Container(),
-                            Text(QranListData[i]["name"],
+                                  )),
+                              Text(
+                                "সূরা " +
+                                    QranListData[i]["bangla_name"] +
+                                    ""
+                                    "(${QranListData[i]['total_verses_b']})",
                                 style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold)),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 0),
+                              child: Text(QranListData[i]["name"],
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 0),
+                              child: Image.asset(
+                                _setImage(QranListData[i]["revelation_type"]),
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
                           ],
                         ),
-                      ),
+                      ],
                     ),
-                  ))),
+                    Divider(
+                      height: 2.0,
+                      color: Colors.teal,
+                    )
+                  ],
+                )),
+              );
+            },
+            itemCount: QranListData.length,
+          ),
         ),
       ),
     );
