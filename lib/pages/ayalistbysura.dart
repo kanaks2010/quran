@@ -406,8 +406,8 @@ class AyaListBytate extends State<AyaListBySura> {
                                               ["verse_${i + 1}"],
                                           style: TextStyle(
                                               fontWeight: FontWeight.w400,
-                                              fontFamily: 'Scheherazade',
-                                              fontSize: 30),
+                                              fontFamily: 'Noor-e-Hidayat',
+                                              fontSize: 25, letterSpacing: 1),
                                           textAlign: TextAlign.right,
                                         ))),
                               )
@@ -433,9 +433,10 @@ class AyaListBytate extends State<AyaListBySura> {
                                             AllSuraListArabic[0]["verse_en"]
                                                 ["verse_${i + 1}"],
                                             style: TextStyle(
-                                                fontWeight: FontWeight.w300,
-                                                fontSize: 20),
-                                            textAlign: TextAlign.start),
+                                              fontFamily: 'Medula One',
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 25),
+                                            textAlign: TextAlign.justify),
                                       ),
                                     ),
                                   ),
@@ -463,7 +464,7 @@ class AyaListBytate extends State<AyaListBySura> {
                                           AllSuraListArabic[0]["verse_bn"]
                                               ["verse_${i + 1}"],
                                           style: TextStyle(
-                                            fontWeight: FontWeight.w300,
+                                            fontWeight: FontWeight.w400,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.start,
