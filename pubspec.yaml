@@ -192,10 +192,18 @@ flutter:
        fonts:
          - asset: fonts/noorehidayat.ttf
            weight: 400
-     - family: Medula One
+     - family: me_quran
        fonts:
-         - asset: fonts/MedulaOne-Regular.ttf
-           weight: 400
+         - asset: fonts/me_quran_volt_newmet.ttf
+           weight: 500
+     - family:  Traditional Arabic
+       fonts:
+         - asset: fonts/trado.ttf
+           weight: 500
+     - family:  Kelly Slab
+       fonts:
+         - asset: fonts/KellySlab-Regular.ttf
+           weight: 500
 
   #
   # For details regarding fonts from package dependencies,

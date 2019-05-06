@@ -346,10 +346,13 @@ class AyaListBytate extends State<AyaListBySura> {
                       },
                       child: Column(
                         children: <Widget>[
-                          Text(
-                            getBismillah(
-                                i, AllSuraListArabic[0]["verse"]["verse_${i}"]),
-                            style: TextStyle(color: Colors.teal, fontSize: 20),
+                          Container(
+                            padding: i == 0 ? EdgeInsets.only(bottom: 25) : EdgeInsets.only(bottom: 0),
+                            child: Text(
+                              getBismillah(
+                                  i, AllSuraListArabic[0]["verse"]["verse_${i}"]),
+                              style: TextStyle(color: Colors.teal, fontSize: 20),
+                            ),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -406,8 +409,8 @@ class AyaListBytate extends State<AyaListBySura> {
                                               ["verse_${i + 1}"],
                                           style: TextStyle(
                                               fontWeight: FontWeight.w400,
-                                              fontFamily: 'Noor-e-Hidayat',
-                                              fontSize: 25, letterSpacing: 1),
+                                              fontFamily: 'me_quran, Traditional Arabic, Noor-e-Hidayat',
+                                              fontSize: 30, letterSpacing: 1),
                                           textAlign: TextAlign.right,
                                         ))),
                               )
@@ -433,10 +436,10 @@ class AyaListBytate extends State<AyaListBySura> {
                                             AllSuraListArabic[0]["verse_en"]
                                                 ["verse_${i + 1}"],
                                             style: TextStyle(
-                                              fontFamily: 'Medula One',
-                                                fontWeight: FontWeight.w400,
+                                              fontFamily: 'Kelly Slab',
+                                                fontWeight: FontWeight.w300,
                                                 fontSize: 25),
-                                            textAlign: TextAlign.justify),
+                                            textAlign: TextAlign.start),
                                       ),
                                     ),
                                   ),
