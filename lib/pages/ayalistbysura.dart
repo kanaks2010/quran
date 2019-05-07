@@ -188,7 +188,7 @@ class AyaListBytate extends State<AyaListBySura> {
           child: AppBar(
             backgroundColor: Colors.teal,
             iconTheme: IconThemeData(color: Colors.tealAccent),
-            title: Text("সূরা " + this.suranInfo["bangla_name"]),
+            title: Text( this.suranInfo["number"] + ": সূরা " + this.suranInfo["bangla_name"]),
             centerTitle: true,
             actions: <Widget>[
               Theme(
@@ -408,9 +408,9 @@ class AyaListBytate extends State<AyaListBySura> {
                                           AllSuraListArabic[0]["verse"]
                                               ["verse_${i + 1}"],
                                           style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontFamily: 'me_quran, Traditional Arabic, Noor-e-Hidayat',
-                                              fontSize: 30, letterSpacing: 1),
+                                              fontWeight: FontWeight.w500, wordSpacing: 0.5,
+                                              fontFamily: 'Traditional Arabic',
+                                              fontSize: 40, letterSpacing: 1),
                                           textAlign: TextAlign.right,
                                         ))),
                               )
@@ -437,8 +437,8 @@ class AyaListBytate extends State<AyaListBySura> {
                                                 ["verse_${i + 1}"],
                                             style: TextStyle(
                                               fontFamily: 'Kelly Slab',
-                                                fontWeight: FontWeight.w300,
-                                                fontSize: 25),
+                                                fontWeight: FontWeight.w200,
+                                                fontSize: 20),
                                             textAlign: TextAlign.start),
                                       ),
                                     ),
