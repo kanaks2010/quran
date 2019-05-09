@@ -408,8 +408,8 @@ class AyaListBytate extends State<AyaListBySura> {
                                           AllSuraListArabic[0]["verse"]
                                               ["verse_${i + 1}"],
                                           style: TextStyle(
-                                              fontWeight: FontWeight.w500, wordSpacing: 0.5,
-                                              fontFamily: 'Traditional Arabic',
+                                              fontWeight: FontWeight.w400, wordSpacing: 0.5,
+                                              fontFamily: 'Lateef',
                                               fontSize: 40, letterSpacing: 1),
                                           textAlign: TextAlign.right,
                                         ))),
