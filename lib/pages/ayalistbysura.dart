@@ -407,10 +407,10 @@ class AyaListBytate extends State<AyaListBySura> {
                                         child: Text(
                                           AllSuraListArabic[0]["verse"]
                                               ["verse_${i + 1}"],
-                                          style: TextStyle(
+                                          style: TextStyle( color: Color(0xFF000000),
                                               fontWeight: FontWeight.w400, wordSpacing: 0.5,
                                               fontFamily: 'Lateef',
-                                              fontSize: 40, letterSpacing: 1),
+                                              fontSize: 40, letterSpacing: 0),
                                           textAlign: TextAlign.right,
                                         ))),
                               )
