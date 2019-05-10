@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,7 +52,7 @@ class SuraItemState extends State<SuraItem> {
   var suraBgc = const Color(0xFFA2D0C9);
   var suraBgc23 = const Color(0xFF2ecc72);
   var suraBgc2 = const Color(0xFF50A9B7);
-  var suraBgc3 ;
+  var suraBgc3;
 
   List QranListData = [];
   List AllSuraList = [];
@@ -90,100 +91,118 @@ class SuraItemState extends State<SuraItem> {
 
   @override
   Widget build(BuildContext context) {
+    ScrollController _arrowsController = ScrollController();
     return Scaffold(
       body: Center(
         child: Container(
-          child: ListView.builder(
-            itemBuilder: (context, i) {
-              return GestureDetector(
-                  onTapDown: (val) {
-                    _onSelected(i);
-                  },
-                  onTapUp: (val){
-                    setState(() {
-                      _selectedIndex = null;
-                    });
-                  },
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AyaListBySura(QranListData[i])),
-                    );
-                  },
-                  child: Card(
-                    child: Container(
-                        color: _selectedIndex != null && _selectedIndex == i
-                            ? suraBgc3
-                            : Colors.white,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text("${QranListData[i]["number"]}",
+          child: DraggableScrollbar.arrows(
+            // labelTextBuilder: (double offset) => Text("${i}"),
+            controller: _arrowsController,
+            scrollbarAnimationDuration: Duration(seconds: 1),
+            scrollbarTimeToFade: Duration(seconds: 1),
+            backgroundColor: Colors.teal,
+            child: ListView.builder(
+              controller: _arrowsController,
+              itemBuilder: (context, i) {
+                return GestureDetector(
+                    onTapDown: (val) {
+                      _onSelected(i);
+                    },
+                    onTapUp: (val) {
+                      setState(() {
+                        _selectedIndex = null;
+                      });
+                    },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                AyaListBySura(QranListData[i])),
+                      );
+                    },
+                    child: Card(
+                      child: Container(
+                          color: _selectedIndex != null && _selectedIndex == i
+                              ? suraBgc3
+                              : Colors.white,
+                          child: Column(
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text("${QranListData[i]["number"]}",
+                                            style: TextStyle(
+                                              fontSize: 17,
+                                              color: _selectedIndex != null &&
+                                                      _selectedIndex == i
+                                                  ? Colors.white
+                                                  : Colors.black,
+                                            )),
+                                        Text(
+                                          "সূরা " +
+                                              QranListData[i]["bangla_name"] +
+                                              ""
+                                              "(${QranListData[i]['total_verses_b']})",
                                           style: TextStyle(
-                                            fontSize: 17,color: _selectedIndex != null && _selectedIndex == i
-                                              ? Colors.white
-                                              : Colors.black,
-                                          )),
-                                      Text(
-                                        "সূরা " +
-                                            QranListData[i]["bangla_name"] +
-                                            ""
-                                            "(${QranListData[i]['total_verses_b']})",
-                                        style: TextStyle(
-                                          fontSize: 17,color: _selectedIndex != null && _selectedIndex == i
-                                            ? Colors.white
-                                            : Colors.black,
+                                            fontSize: 17,
+                                            color: _selectedIndex != null &&
+                                                    _selectedIndex == i
+                                                ? Colors.white
+                                                : Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 5, vertical: 0),
+                                        child: Text(QranListData[i]["name"],
+                                            style: TextStyle(
+                                                fontSize: 17,
+                                                color: _selectedIndex != null &&
+                                                        _selectedIndex == i
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                                fontWeight: FontWeight.bold)),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 5, vertical: 0),
+                                        child: Image.asset(
+                                          _setImage(QranListData[i]
+                                              ["revelation_type"]),
+                                          height: 20,
+                                          width: 20,
                                         ),
                                       ),
                                     ],
                                   ),
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 5, vertical: 0),
-                                      child: Text(QranListData[i]["name"],
-                                          style: TextStyle(
-                                              fontSize: 17,color: _selectedIndex != null && _selectedIndex == i
-                                              ? Colors.white
-                                              : Colors.black,
-                                              fontWeight: FontWeight.bold)),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 5, vertical: 0),
-                                      child: Image.asset(
-                                        _setImage(
-                                            QranListData[i]["revelation_type"]),
-                                        height: 20,
-                                        width: 20,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Divider(
-                              height: 2.0,
-                              color: Colors.teal,
-                            )
-                          ],
-                        )),
-                  ));
-            },
-            itemCount: QranListData.length,
+                                ],
+                              ),
+                              Divider(
+                                height: 2.0,
+                                color: Colors.teal,
+                              )
+                            ],
+                          )),
+                    ));
+              },
+              itemCount: QranListData.length,
+            ),
           ),
         ),
       ),
