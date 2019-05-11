@@ -217,7 +217,7 @@ class AyaListBytate extends State<AyaListBySura> {
                             child: Text(
                               getBismillah(
                                   i, AllSuraListArabic[0]["verse"]["verse_${i}"]),
-                              style: TextStyle(color: Colors.teal, fontSize: 20),
+                              style: TextStyle(color: Colors.teal, fontSize: 25),
                             ),
                           ),
                           Row(
@@ -302,8 +302,7 @@ class AyaListBytate extends State<AyaListBySura> {
                                             AllSuraListArabic[0]["verse_en"]
                                             ["verse_${i + 1}"],
                                             style: TextStyle(
-                                                fontFamily: 'Kelly Slab',
-                                                fontWeight: FontWeight.w200,
+                                                fontWeight: FontWeight.w400,
                                                 fontSize: 20),
                                             textAlign: TextAlign.start),
                                       ),

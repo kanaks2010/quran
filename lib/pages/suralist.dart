@@ -23,7 +23,8 @@ class SuraListState extends State<SuraList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
+      appBar:
+      PreferredSize(
           preferredSize: Size.fromHeight(40.0),
           child: AppBar(
             backgroundColor: Color(0xFF009484),

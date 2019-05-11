@@ -61,6 +61,7 @@ flutter:
     - assets/images/bgImg.png
     - assets/images/qlauncher.png
     - assets/sura_list.json
+    - assets/40hadis/40.json
     - assets/quran/1.json
     - assets/quran/2.json
     - assets/quran/3.json
@@ -189,22 +190,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: Noor-e-Hidayat
-       fonts:
-         - asset: fonts/noorehidayat.ttf
-           weight: 400
-     - family: me_quran
-       fonts:
-         - asset: fonts/me_quran_volt_newmet.ttf
-           weight: 400
-     - family:  Traditional Arabic
-       fonts:
-         - asset: fonts/trado.ttf
-           weight: 500
-     - family:  Kelly Slab
-       fonts:
-         - asset: fonts/KellySlab-Regular.ttf
-           weight: 500
      - family:  Lateef
        fonts:
          - asset: fonts/LateefRegOT.ttf

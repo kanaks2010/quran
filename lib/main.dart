@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quran/pages/ayalistbysura.dart';
+import 'package:quran/pages/hadislist.dart';
 import 'package:quran/pages/suralist.dart';
 
 void main() {
@@ -89,7 +90,7 @@ class BanglaQuranState extends State<BanglaQuran> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SuraList()),
+                        MaterialPageRoute(builder: (context) => HadisList()),
                       );
                     },
                     child: Stack(
