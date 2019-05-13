@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "652909073430",
+    "firebase_url": "https://quranbengali.firebaseio.com",
+    "project_id": "quranbengali",
+    "storage_bucket": "quranbengali.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652909073430:android:3484228f3c777d39",
+        "android_client_info": {
+          "package_name": "com.example.quran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652909073430-kgchetqeueqthfc1h2vb624avj78uf0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjFNe2G5f8iMipx2YkBuQh1di2Xn1PIEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652909073430-kgchetqeueqthfc1h2vb624avj78uf0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

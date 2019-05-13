@@ -27,6 +27,8 @@ dependencies:
   flutter_launcher_icons: ^0.7.0
   draggable_scrollbar: ^0.0.4
   contacts_service: ^0.2.6
+  firebase_core:
+  firebase_database:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -193,7 +195,7 @@ flutter:
   fonts:
      - family:  Lateef
        fonts:
-         - asset: fonts/LateefRegOT.ttf
+         - asset: assets/fonts/LateefRegOT.ttf
            weight: 500
 
   #

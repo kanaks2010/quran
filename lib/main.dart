@@ -6,6 +6,7 @@ import 'package:quran/pages/ayalistbysura.dart';
 import 'package:quran/pages/hadislist.dart';
 import 'package:quran/pages/suralist.dart';
 import 'package:contacts_service/contacts_service.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -75,6 +76,19 @@ class BanglaQuranState extends State<BanglaQuran> {
         });
   }
 
+  sendToTheServer(){
+    DatabaseReference reference = FirebaseDatabase.instance.reference();
+    var data = {
+      "email": "kanaks2010@gmail.com 2",
+      "phone": "01719839141 2",
+      "comment": "this is good application 2"
+    };
+    print('${data} ' +   ' trying to data saved');
+    reference.child('feedback').push().set(data).then((onValue){
+      print('${data} ' +   ' data saved');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +108,8 @@ class BanglaQuranState extends State<BanglaQuran> {
                 ),
                 onPressed: () {
                   print("Icon presed");
-                  _showDialog();
+                  // _showDialog();
+                  sendToTheServer();
                 },
               ),
             ],
