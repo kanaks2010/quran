@@ -26,6 +26,7 @@ dependencies:
   flutter_share_me: 0.1.2
   flutter_launcher_icons: ^0.7.0
   draggable_scrollbar: ^0.0.4
+  contacts_service: ^0.2.6
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2

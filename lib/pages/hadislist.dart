@@ -284,7 +284,7 @@ class HadisListState extends State<HadisList> {
                               child: Text(
                                 getHadisErMan(i),
                                 style: TextStyle(
-                                  color: Colors.teal,
+                                  color: i == 30 ? Colors.deepOrange : Colors.green, fontSize: 16, fontWeight: FontWeight.w500
                                 ),
                               ),
                             ),
