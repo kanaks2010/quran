@@ -1,12 +1,9 @@
 import 'dart:convert';
-
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_share_me/flutter_share_me.dart';
 import 'package:share/share.dart';
 
 class AyaListBySura extends StatefulWidget {
