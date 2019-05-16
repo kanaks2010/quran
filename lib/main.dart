@@ -170,6 +170,8 @@ class BanglaQuranState extends State<BanglaQuran> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(40.0),
           child: AppBar(
+            title: Text("বাংলা কুরআন"),
+            centerTitle: true,
             backgroundColor: Colors.teal,
             iconTheme: IconThemeData(color: Colors.black),
             actions: <Widget>[

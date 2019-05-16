@@ -1,4 +1,4 @@
-package com.example.quran;
+package com.banglaquran.quran;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:652909073430:android:3484228f3c777d39",
+        "mobilesdk_app_id": "1:652909073430:android:e5762b2978de72e0",
         "android_client_info": {
-          "package_name": "com.example.quran"
+          "package_name": "com.banglaquran.quran"
         }
       },
       "oauth_client": [
