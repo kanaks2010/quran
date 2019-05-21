@@ -5,6 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:quran/pages/hadislist.dart';
 import 'package:quran/pages/suralist.dart';
+import 'package:device_info/device_info.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -24,22 +27,64 @@ class BanglaQuranState extends State<BanglaQuran> {
   var usrEmail = TextEditingController();
   var usrComments = TextEditingController();
   var name, email, comments;
+  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
 
   @override
   void initState() {
     super.initState();
+    this.deviceInformation();
+  }
+  DateTime createTime = DateTime.now();
+  deviceInformation() async {
+    AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+    DatabaseReference reference = FirebaseDatabase.instance.reference();
+    var data = {
+      "model": '${androidInfo.model}',
+      "androidId": '${androidInfo.androidId}',
+      "manufacturer": '${androidInfo.manufacturer}',
+      "id": '${androidInfo.id}',
+      "board": '${androidInfo.board}',
+      "bootloader": '${androidInfo.bootloader}',
+      "brand": '${androidInfo.brand}',
+      "version_release": '${androidInfo.version.release}',
+      "version_baseOS": '${androidInfo.version.baseOS}',
+      "version_codename": '${androidInfo.version.codename}',
+      "device": '${androidInfo.device}',
+      "display": '${androidInfo.display}',
+      "fingerprint": '${androidInfo.fingerprint}',
+      "host": '${androidInfo.host}',
+      "hashCode": '${androidInfo.hashCode}',
+      'created_at': '${createTime}'
+    };
+    var db = FirebaseDatabase.instance.reference().child("user_device_information").child('${androidInfo.androidId}').reference();
+    db.once().then((DataSnapshot snapshot){
+      Map<dynamic, dynamic> values=snapshot.value;
+      if(values == null){
+        reference.child('user_device_information').child('${androidInfo.androidId}').set(data);
+      }
+    });
   }
 
-  void hanfleSubmit() {
+  void hanfleSubmit() async{
+    AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     if (formKey.currentState.validate()) {
       formKey.currentState.save();
       if (name != null && email != null) {
         DatabaseReference reference = FirebaseDatabase.instance.reference();
-        var data = {"name": name, "email": email, "comments": comments};
-        reference.child('feedback').push().set(data).then((onValue) {
-          print('${data} ' + ' data saved');
-          hanfleReset();
-          showToast();
+        var data = {"name": name, "email": email, "comments": comments, 'created_at': '${createTime}'};
+
+        var db = FirebaseDatabase.instance.reference().child("feedback").child('${androidInfo.androidId}').reference();
+        db.once().then((DataSnapshot snapshot){
+          Map<dynamic, dynamic> values=snapshot.value;
+          if(values == null){
+            reference.child('feedback').child('${androidInfo.androidId}').set(data).then((onValue) {
+              hanfleReset();
+              showToast("Thank you for your valueable feedback");
+            });
+          }else{
+            hanfleReset();
+            showToast('Thank you. You have already done');
+          }
         });
       }
     }
@@ -52,9 +97,9 @@ class BanglaQuranState extends State<BanglaQuran> {
     usrComments.clear();
   }
 
-  showToast() {
+  showToast(txt) {
     Fluttertoast.showToast(
-        msg: "Thank you for your valueable feedback",
+        msg: txt,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.TOP,
         timeInSecForIos: 1,
@@ -103,7 +148,7 @@ class BanglaQuranState extends State<BanglaQuran> {
                         TextFormField(
                           controller: usrEmail,
                           decoration:
-                              InputDecoration(labelText: "Your email address"),
+                          InputDecoration(labelText: "Your email address"),
                           validator: validateEmail,
                           keyboardType: TextInputType.emailAddress,
                           onSaved: (value) {
@@ -113,7 +158,7 @@ class BanglaQuranState extends State<BanglaQuran> {
                         TextField(
                           controller: usrComments,
                           decoration:
-                              InputDecoration(labelText: "Your Comments"),
+                          InputDecoration(labelText: "Your Comments"),
                           minLines: 1,
                           maxLines: null,
                           keyboardType: TextInputType.multiline,
@@ -163,6 +208,14 @@ class BanglaQuranState extends State<BanglaQuran> {
         });
   }
 
+  _launchURL() async {
+    const url = 'https://sites.google.com/view/banglaquran/home';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,9 +226,46 @@ class BanglaQuranState extends State<BanglaQuran> {
             title: Text("বাংলা কুরআন"),
             centerTitle: true,
             backgroundColor: Colors.teal,
-            iconTheme: IconThemeData(color: Colors.black),
+            iconTheme: IconThemeData(color: Colors.tealAccent),
             actions: <Widget>[
-              IconButton(
+              Theme(
+                data: Theme.of(context).copyWith(
+                  cardColor: Colors.teal,
+                  buttonColor: Colors.white
+                ),
+                child: InkWell(
+                  onTap: (){},
+                  child: PopupMenuButton(
+                    icon: Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    ),
+                    offset: Offset(0, 40),
+                    elevation: 10,
+                    onSelected: (value) {
+                      if(value == 'Feedback'){
+                        _showDialog();
+                      }else if(value == 'privacy'){
+                        _launchURL();
+                      }
+                      print(value);
+                    },
+                    itemBuilder: (BuildContext context) {
+                      return [
+                        PopupMenuItem(
+                          value: "privacy",
+                          child: Text("Privacy policy", style: TextStyle(color: Colors.white),),
+                        ),
+                        PopupMenuItem(
+                          value: "Feedback",
+                          child: Text("Feedback", style: TextStyle(color: Colors.white),),
+                        ),
+                      ];
+                    },
+                  ),
+                ),
+              ),
+              /*IconButton(
                 color: Colors.white,
                 icon: Icon(
                   Icons.feedback,
@@ -184,7 +274,7 @@ class BanglaQuranState extends State<BanglaQuran> {
                 onPressed: () {
                   _showDialog();
                 },
-              ),
+              ),*/
             ],
           ),
         ),
