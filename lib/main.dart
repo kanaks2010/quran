@@ -7,6 +7,8 @@ import 'package:quran/pages/hadislist.dart';
 import 'package:quran/pages/suralist.dart';
 import 'package:device_info/device_info.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:launch_review/launch_review.dart';
+import 'package:connectivity/connectivity.dart';
 
 
 void main() {
@@ -27,14 +29,18 @@ class BanglaQuranState extends State<BanglaQuran> {
   var usrEmail = TextEditingController();
   var usrComments = TextEditingController();
   var name, email, comments;
+
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+
 
   @override
   void initState() {
     super.initState();
-    this.deviceInformation();
   }
+
+
   DateTime createTime = DateTime.now();
+
   deviceInformation() async {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     DatabaseReference reference = FirebaseDatabase.instance.reference();
@@ -56,32 +62,43 @@ class BanglaQuranState extends State<BanglaQuran> {
       "hashCode": '${androidInfo.hashCode}',
       'created_at': '${createTime}'
     };
-    var db = FirebaseDatabase.instance.reference().child("user_device_information").child('${androidInfo.androidId}').reference();
-    db.once().then((DataSnapshot snapshot){
-      Map<dynamic, dynamic> values=snapshot.value;
-      if(values == null){
-        reference.child('user_device_information').child('${androidInfo.androidId}').set(data);
+    var db = FirebaseDatabase.instance.reference().child(
+        "user_device_information")
+        .child('${androidInfo.androidId}')
+        .reference();
+    db.once().then((DataSnapshot snapshot) {
+      Map<dynamic, dynamic> values = snapshot.value;
+      if (values == null) {
+        reference.child('user_device_information').child(
+            '${androidInfo.androidId}').set(data);
       }
     });
   }
 
-  void hanfleSubmit() async{
+  void hanfleSubmit() async {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     if (formKey.currentState.validate()) {
       formKey.currentState.save();
       if (name != null && email != null) {
         DatabaseReference reference = FirebaseDatabase.instance.reference();
-        var data = {"name": name, "email": email, "comments": comments, 'created_at': '${createTime}'};
+        var data = {
+          "name": name,
+          "email": email,
+          "comments": comments,
+          'created_at': '${createTime}'
+        };
 
-        var db = FirebaseDatabase.instance.reference().child("feedback").child('${androidInfo.androidId}').reference();
-        db.once().then((DataSnapshot snapshot){
-          Map<dynamic, dynamic> values=snapshot.value;
-          if(values == null){
-            reference.child('feedback').child('${androidInfo.androidId}').set(data).then((onValue) {
+        var db = FirebaseDatabase.instance.reference().child("feedback").child(
+            '${androidInfo.androidId}').reference();
+        db.once().then((DataSnapshot snapshot) {
+          Map<dynamic, dynamic> values = snapshot.value;
+          if (values == null) {
+            reference.child('feedback').child('${androidInfo.androidId}').set(
+                data).then((onValue) {
               hanfleReset();
               showToast("Thank you for your valueable feedback");
             });
-          }else{
+          } else {
             hanfleReset();
             showToast('Thank you. You have already done');
           }
@@ -120,6 +137,43 @@ class BanglaQuranState extends State<BanglaQuran> {
       else
         return null;
     }
+  }
+
+  review() {
+    LaunchReview.launch();
+  }
+
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    setState(() {});
+  }
+
+  showRateDialog() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Rate 5 Start for Holy Quran"),
+            content: Text("Please rate now"),
+            actions: <Widget>[
+          RaisedButton(
+          color: Colors.deepOrange,
+            onPressed: () {
+            SystemNavigator.pop();
+            },
+            child: Text('Later', style: TextStyle(color: Colors.white),),
+          ),
+          RaisedButton(
+            color: Colors.teal,
+            onPressed: () {
+              this.review();
+            },
+            child: Text('Rate Now', style: TextStyle(color: Colors.white),),
+          )
+          ]
+          ,
+          );
+        }
+    );
   }
 
   _showDialog() {
@@ -190,7 +244,7 @@ class BanglaQuranState extends State<BanglaQuran> {
                               textColor: Colors.white,
                               child: Text("Submit"),
                               onPressed: () {
-                                hanfleSubmit();
+                                // hanfleSubmit();
 
                                 // showToast();
                               },
@@ -216,56 +270,76 @@ class BanglaQuranState extends State<BanglaQuran> {
       throw 'Could not launch $url';
     }
   }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.cyan,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
-          child: AppBar(
-            title: Text("বাংলা কুরআন"),
-            centerTitle: true,
-            backgroundColor: Colors.teal,
-            iconTheme: IconThemeData(color: Colors.tealAccent),
-            actions: <Widget>[
-              Theme(
-                data: Theme.of(context).copyWith(
-                  cardColor: Colors.teal,
-                  buttonColor: Colors.white
-                ),
-                child: InkWell(
-                  onTap: (){},
-                  child: PopupMenuButton(
-                    icon: Icon(
-                      Icons.menu,
-                      color: Colors.white,
+    return WillPopScope(
+        onWillPop: () async {
+          this.showRateDialog();
+          var connectivityResult = await (Connectivity().checkConnectivity());
+          if (connectivityResult == ConnectivityResult.mobile) {
+            this.deviceInformation();
+          } else if (connectivityResult == ConnectivityResult.wifi) {
+            this.deviceInformation();
+          }
+        },
+        child: Scaffold(
+            backgroundColor: Colors.cyan,
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(40.0),
+              child: AppBar(
+                title: Text("বাংলা কুরআন"),
+                centerTitle: true,
+                backgroundColor: Colors.teal,
+                iconTheme: IconThemeData(color: Colors.tealAccent),
+                actions: <Widget>[
+                  Theme(
+                    data: Theme.of(context).copyWith(
+                        cardColor: Colors.teal,
+                        buttonColor: Colors.white
                     ),
-                    offset: Offset(0, 40),
-                    elevation: 10,
-                    onSelected: (value) {
-                      if(value == 'Feedback'){
-                        _showDialog();
-                      }else if(value == 'privacy'){
-                        _launchURL();
-                      }
-                      print(value);
-                    },
-                    itemBuilder: (BuildContext context) {
-                      return [
-                        PopupMenuItem(
-                          value: "privacy",
-                          child: Text("Privacy policy", style: TextStyle(color: Colors.white),),
+                    child: InkWell(
+                      onTap: () {},
+                      child: PopupMenuButton(
+                        icon: Icon(
+                          Icons.menu,
+                          color: Colors.white,
                         ),
-                        PopupMenuItem(
-                          value: "Feedback",
-                          child: Text("Feedback", style: TextStyle(color: Colors.white),),
-                        ),
-                      ];
-                    },
+                        offset: Offset(0, 40),
+                        elevation: 10,
+                        onSelected: (value) {
+                          if (value == 'Feedback') {
+                            _showDialog();
+                          } else if (value == 'privacy') {
+                            _launchURL();
+                          } else if (value == 'Rate_App') {
+                            review();
+                          }
+                          print(value);
+                        },
+                        itemBuilder: (BuildContext context) {
+                          return [
+                            PopupMenuItem(
+                              value: "privacy",
+                              child: Text("Privacy policy",
+                                style: TextStyle(color: Colors.white),),
+                            ),
+                            PopupMenuItem(
+                              value: "Feedback",
+                              child: Text("Feedback",
+                                style: TextStyle(color: Colors.white),),
+                            ),
+                            PopupMenuItem(
+                              value: "Rate_App",
+                              child: Text("Rate App",
+                                style: TextStyle(color: Colors.white),),
+                            ),
+                          ];
+                        },
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              /*IconButton(
+                  /*IconButton(
                 color: Colors.white,
                 icon: Icon(
                   Icons.feedback,
@@ -275,70 +349,73 @@ class BanglaQuranState extends State<BanglaQuran> {
                   _showDialog();
                 },
               ),*/
-            ],
-          ),
-        ),
-        body: Container(
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage("assets/images/bgImg.png"),
-              fit: BoxFit.cover,
+                ],
+              ),
             ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Row(
+            body: Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage("assets/images/bgImg.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Card(
-                    borderOnForeground: true,
-                    color: Colors.teal,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SuraList()),
-                        );
-                      },
-                      child: Stack(
-                        children: <Widget>[
-                          Image.asset(
-                            "assets/images/qlauncher.png",
-                            height: 100,
-                            width: 100,
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Card(
+                        borderOnForeground: true,
+                        color: Colors.teal,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SuraList()),
+                            );
+                          },
+                          child: Stack(
+                            children: <Widget>[
+                              Image.asset(
+                                "assets/images/qlauncher.png",
+                                height: 100,
+                                width: 100,
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
+                        elevation: 15,
+                        margin: EdgeInsets.all(5),
                       ),
-                    ),
-                    elevation: 15,
-                    margin: EdgeInsets.all(5),
-                  ),
-                  Card(
-                    borderOnForeground: true,
-                    color: Colors.teal,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HadisList()),
-                        );
-                      },
-                      child: Stack(
-                        children: <Widget>[
-                          Image.asset("assets/images/hadith.png"),
-                        ],
+                      Card(
+                        borderOnForeground: true,
+                        color: Colors.teal,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HadisList()),
+                            );
+                          },
+                          child: Stack(
+                            children: <Widget>[
+                              Image.asset("assets/images/hadith.png"),
+                            ],
+                          ),
+                        ),
+                        elevation: 15,
+                        margin: EdgeInsets.all(5),
                       ),
-                    ),
-                    elevation: 15,
-                    margin: EdgeInsets.all(5),
-                  ),
+                    ],
+                  )
                 ],
-              )
-            ],
-          ),
-        ));
+              ),
+            ))
+    );
   }
 }

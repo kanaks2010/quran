@@ -1,5 +1,5 @@
 name: quran
-description: A new Flutter project.
+description: Bangla Quran contains two translation. English and Bangla with main arabic text.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -26,6 +26,8 @@ dependencies:
   firebase_database: ^3.0.0
   device_info: ^0.4.0+1
   url_launcher: ^5.0.2
+  launch_review: ^2.0.0
+  connectivity: ^0.4.3+1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
