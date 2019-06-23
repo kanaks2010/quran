@@ -352,7 +352,8 @@ class BanglaQuranState extends State<BanglaQuran> {
                 ],
               ),
             ),
-            body: Container(
+            body:
+            Container(
               decoration: new BoxDecoration(
                 image: new DecorationImage(
                   image: new AssetImage("assets/images/bgImg.png"),
